@@ -58,7 +58,7 @@ Constructs AddPermissionInput's fields from required parameters
 
 ``` purescript
 newtype AuthorizationErrorException
-  = AuthorizationErrorException { message :: NullOrUndefined (String) }
+  = AuthorizationErrorException { message :: Maybe (String) }
 ```
 
 <p>Indicates that the user has been denied access to the requested resource.</p>
@@ -83,7 +83,7 @@ Constructs AuthorizationErrorException from required parameters
 #### `newAuthorizationErrorException'`
 
 ``` purescript
-newAuthorizationErrorException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> AuthorizationErrorException
+newAuthorizationErrorException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> AuthorizationErrorException
 ```
 
 Constructs AuthorizationErrorException's fields from required parameters
@@ -142,7 +142,7 @@ Constructs CheckIfPhoneNumberIsOptedOutInput's fields from required parameters
 
 ``` purescript
 newtype CheckIfPhoneNumberIsOptedOutResponse
-  = CheckIfPhoneNumberIsOptedOutResponse { isOptedOut :: NullOrUndefined (Boolean) }
+  = CheckIfPhoneNumberIsOptedOutResponse { isOptedOut :: Maybe (Boolean) }
 ```
 
 <p>The response from the <code>CheckIfPhoneNumberIsOptedOut</code> action.</p>
@@ -167,7 +167,7 @@ Constructs CheckIfPhoneNumberIsOptedOutResponse from required parameters
 #### `newCheckIfPhoneNumberIsOptedOutResponse'`
 
 ``` purescript
-newCheckIfPhoneNumberIsOptedOutResponse' :: ({ isOptedOut :: NullOrUndefined (Boolean) } -> { isOptedOut :: NullOrUndefined (Boolean) }) -> CheckIfPhoneNumberIsOptedOutResponse
+newCheckIfPhoneNumberIsOptedOutResponse' :: ({ isOptedOut :: Maybe (Boolean) } -> { isOptedOut :: Maybe (Boolean) }) -> CheckIfPhoneNumberIsOptedOutResponse
 ```
 
 Constructs CheckIfPhoneNumberIsOptedOutResponse's fields from required parameters
@@ -176,7 +176,7 @@ Constructs CheckIfPhoneNumberIsOptedOutResponse's fields from required parameter
 
 ``` purescript
 newtype ConfirmSubscriptionInput
-  = ConfirmSubscriptionInput { "TopicArn" :: TopicARN', "Token" :: Token', "AuthenticateOnUnsubscribe" :: NullOrUndefined (AuthenticateOnUnsubscribe') }
+  = ConfirmSubscriptionInput { "TopicArn" :: TopicARN', "Token" :: Token', "AuthenticateOnUnsubscribe" :: Maybe (AuthenticateOnUnsubscribe') }
 ```
 
 <p>Input for ConfirmSubscription action.</p>
@@ -201,7 +201,7 @@ Constructs ConfirmSubscriptionInput from required parameters
 #### `newConfirmSubscriptionInput'`
 
 ``` purescript
-newConfirmSubscriptionInput' :: Token' -> TopicARN' -> ({ "TopicArn" :: TopicARN', "Token" :: Token', "AuthenticateOnUnsubscribe" :: NullOrUndefined (AuthenticateOnUnsubscribe') } -> { "TopicArn" :: TopicARN', "Token" :: Token', "AuthenticateOnUnsubscribe" :: NullOrUndefined (AuthenticateOnUnsubscribe') }) -> ConfirmSubscriptionInput
+newConfirmSubscriptionInput' :: Token' -> TopicARN' -> ({ "TopicArn" :: TopicARN', "Token" :: Token', "AuthenticateOnUnsubscribe" :: Maybe (AuthenticateOnUnsubscribe') } -> { "TopicArn" :: TopicARN', "Token" :: Token', "AuthenticateOnUnsubscribe" :: Maybe (AuthenticateOnUnsubscribe') }) -> ConfirmSubscriptionInput
 ```
 
 Constructs ConfirmSubscriptionInput's fields from required parameters
@@ -210,7 +210,7 @@ Constructs ConfirmSubscriptionInput's fields from required parameters
 
 ``` purescript
 newtype ConfirmSubscriptionResponse
-  = ConfirmSubscriptionResponse { "SubscriptionArn" :: NullOrUndefined (SubscriptionARN') }
+  = ConfirmSubscriptionResponse { "SubscriptionArn" :: Maybe (SubscriptionARN') }
 ```
 
 <p>Response for ConfirmSubscriptions action.</p>
@@ -235,7 +235,7 @@ Constructs ConfirmSubscriptionResponse from required parameters
 #### `newConfirmSubscriptionResponse'`
 
 ``` purescript
-newConfirmSubscriptionResponse' :: ({ "SubscriptionArn" :: NullOrUndefined (SubscriptionARN') } -> { "SubscriptionArn" :: NullOrUndefined (SubscriptionARN') }) -> ConfirmSubscriptionResponse
+newConfirmSubscriptionResponse' :: ({ "SubscriptionArn" :: Maybe (SubscriptionARN') } -> { "SubscriptionArn" :: Maybe (SubscriptionARN') }) -> ConfirmSubscriptionResponse
 ```
 
 Constructs ConfirmSubscriptionResponse's fields from required parameters
@@ -244,7 +244,7 @@ Constructs ConfirmSubscriptionResponse's fields from required parameters
 
 ``` purescript
 newtype CreateEndpointResponse
-  = CreateEndpointResponse { "EndpointArn" :: NullOrUndefined (String) }
+  = CreateEndpointResponse { "EndpointArn" :: Maybe (String) }
 ```
 
 <p>Response from CreateEndpoint action.</p>
@@ -269,7 +269,7 @@ Constructs CreateEndpointResponse from required parameters
 #### `newCreateEndpointResponse'`
 
 ``` purescript
-newCreateEndpointResponse' :: ({ "EndpointArn" :: NullOrUndefined (String) } -> { "EndpointArn" :: NullOrUndefined (String) }) -> CreateEndpointResponse
+newCreateEndpointResponse' :: ({ "EndpointArn" :: Maybe (String) } -> { "EndpointArn" :: Maybe (String) }) -> CreateEndpointResponse
 ```
 
 Constructs CreateEndpointResponse's fields from required parameters
@@ -312,7 +312,7 @@ Constructs CreatePlatformApplicationInput's fields from required parameters
 
 ``` purescript
 newtype CreatePlatformApplicationResponse
-  = CreatePlatformApplicationResponse { "PlatformApplicationArn" :: NullOrUndefined (String) }
+  = CreatePlatformApplicationResponse { "PlatformApplicationArn" :: Maybe (String) }
 ```
 
 <p>Response from CreatePlatformApplication action.</p>
@@ -337,7 +337,7 @@ Constructs CreatePlatformApplicationResponse from required parameters
 #### `newCreatePlatformApplicationResponse'`
 
 ``` purescript
-newCreatePlatformApplicationResponse' :: ({ "PlatformApplicationArn" :: NullOrUndefined (String) } -> { "PlatformApplicationArn" :: NullOrUndefined (String) }) -> CreatePlatformApplicationResponse
+newCreatePlatformApplicationResponse' :: ({ "PlatformApplicationArn" :: Maybe (String) } -> { "PlatformApplicationArn" :: Maybe (String) }) -> CreatePlatformApplicationResponse
 ```
 
 Constructs CreatePlatformApplicationResponse's fields from required parameters
@@ -346,7 +346,7 @@ Constructs CreatePlatformApplicationResponse's fields from required parameters
 
 ``` purescript
 newtype CreatePlatformEndpointInput
-  = CreatePlatformEndpointInput { "PlatformApplicationArn" :: String, "Token" :: String, "CustomUserData" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (MapStringToString) }
+  = CreatePlatformEndpointInput { "PlatformApplicationArn" :: String, "Token" :: String, "CustomUserData" :: Maybe (String), "Attributes" :: Maybe (MapStringToString) }
 ```
 
 <p>Input for CreatePlatformEndpoint action.</p>
@@ -371,7 +371,7 @@ Constructs CreatePlatformEndpointInput from required parameters
 #### `newCreatePlatformEndpointInput'`
 
 ``` purescript
-newCreatePlatformEndpointInput' :: String -> String -> ({ "PlatformApplicationArn" :: String, "Token" :: String, "CustomUserData" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (MapStringToString) } -> { "PlatformApplicationArn" :: String, "Token" :: String, "CustomUserData" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (MapStringToString) }) -> CreatePlatformEndpointInput
+newCreatePlatformEndpointInput' :: String -> String -> ({ "PlatformApplicationArn" :: String, "Token" :: String, "CustomUserData" :: Maybe (String), "Attributes" :: Maybe (MapStringToString) } -> { "PlatformApplicationArn" :: String, "Token" :: String, "CustomUserData" :: Maybe (String), "Attributes" :: Maybe (MapStringToString) }) -> CreatePlatformEndpointInput
 ```
 
 Constructs CreatePlatformEndpointInput's fields from required parameters
@@ -414,7 +414,7 @@ Constructs CreateTopicInput's fields from required parameters
 
 ``` purescript
 newtype CreateTopicResponse
-  = CreateTopicResponse { "TopicArn" :: NullOrUndefined (TopicARN') }
+  = CreateTopicResponse { "TopicArn" :: Maybe (TopicARN') }
 ```
 
 <p>Response from CreateTopic action.</p>
@@ -439,7 +439,7 @@ Constructs CreateTopicResponse from required parameters
 #### `newCreateTopicResponse'`
 
 ``` purescript
-newCreateTopicResponse' :: ({ "TopicArn" :: NullOrUndefined (TopicARN') } -> { "TopicArn" :: NullOrUndefined (TopicARN') }) -> CreateTopicResponse
+newCreateTopicResponse' :: ({ "TopicArn" :: Maybe (TopicARN') } -> { "TopicArn" :: Maybe (TopicARN') }) -> CreateTopicResponse
 ```
 
 Constructs CreateTopicResponse's fields from required parameters
@@ -564,7 +564,7 @@ Constructs DeleteTopicInput's fields from required parameters
 
 ``` purescript
 newtype Endpoint
-  = Endpoint { "EndpointArn" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (MapStringToString) }
+  = Endpoint { "EndpointArn" :: Maybe (String), "Attributes" :: Maybe (MapStringToString) }
 ```
 
 <p>Endpoint for mobile app and device.</p>
@@ -589,7 +589,7 @@ Constructs Endpoint from required parameters
 #### `newEndpoint'`
 
 ``` purescript
-newEndpoint' :: ({ "EndpointArn" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (MapStringToString) } -> { "EndpointArn" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (MapStringToString) }) -> Endpoint
+newEndpoint' :: ({ "EndpointArn" :: Maybe (String), "Attributes" :: Maybe (MapStringToString) } -> { "EndpointArn" :: Maybe (String), "Attributes" :: Maybe (MapStringToString) }) -> Endpoint
 ```
 
 Constructs Endpoint's fields from required parameters
@@ -598,7 +598,7 @@ Constructs Endpoint's fields from required parameters
 
 ``` purescript
 newtype EndpointDisabledException
-  = EndpointDisabledException { message :: NullOrUndefined (String) }
+  = EndpointDisabledException { message :: Maybe (String) }
 ```
 
 <p>Exception error indicating endpoint disabled.</p>
@@ -623,7 +623,7 @@ Constructs EndpointDisabledException from required parameters
 #### `newEndpointDisabledException'`
 
 ``` purescript
-newEndpointDisabledException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> EndpointDisabledException
+newEndpointDisabledException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> EndpointDisabledException
 ```
 
 Constructs EndpointDisabledException's fields from required parameters
@@ -666,7 +666,7 @@ Constructs GetEndpointAttributesInput's fields from required parameters
 
 ``` purescript
 newtype GetEndpointAttributesResponse
-  = GetEndpointAttributesResponse { "Attributes" :: NullOrUndefined (MapStringToString) }
+  = GetEndpointAttributesResponse { "Attributes" :: Maybe (MapStringToString) }
 ```
 
 <p>Response from GetEndpointAttributes of the EndpointArn.</p>
@@ -691,7 +691,7 @@ Constructs GetEndpointAttributesResponse from required parameters
 #### `newGetEndpointAttributesResponse'`
 
 ``` purescript
-newGetEndpointAttributesResponse' :: ({ "Attributes" :: NullOrUndefined (MapStringToString) } -> { "Attributes" :: NullOrUndefined (MapStringToString) }) -> GetEndpointAttributesResponse
+newGetEndpointAttributesResponse' :: ({ "Attributes" :: Maybe (MapStringToString) } -> { "Attributes" :: Maybe (MapStringToString) }) -> GetEndpointAttributesResponse
 ```
 
 Constructs GetEndpointAttributesResponse's fields from required parameters
@@ -734,7 +734,7 @@ Constructs GetPlatformApplicationAttributesInput's fields from required paramete
 
 ``` purescript
 newtype GetPlatformApplicationAttributesResponse
-  = GetPlatformApplicationAttributesResponse { "Attributes" :: NullOrUndefined (MapStringToString) }
+  = GetPlatformApplicationAttributesResponse { "Attributes" :: Maybe (MapStringToString) }
 ```
 
 <p>Response for GetPlatformApplicationAttributes action.</p>
@@ -759,7 +759,7 @@ Constructs GetPlatformApplicationAttributesResponse from required parameters
 #### `newGetPlatformApplicationAttributesResponse'`
 
 ``` purescript
-newGetPlatformApplicationAttributesResponse' :: ({ "Attributes" :: NullOrUndefined (MapStringToString) } -> { "Attributes" :: NullOrUndefined (MapStringToString) }) -> GetPlatformApplicationAttributesResponse
+newGetPlatformApplicationAttributesResponse' :: ({ "Attributes" :: Maybe (MapStringToString) } -> { "Attributes" :: Maybe (MapStringToString) }) -> GetPlatformApplicationAttributesResponse
 ```
 
 Constructs GetPlatformApplicationAttributesResponse's fields from required parameters
@@ -768,7 +768,7 @@ Constructs GetPlatformApplicationAttributesResponse's fields from required param
 
 ``` purescript
 newtype GetSMSAttributesInput
-  = GetSMSAttributesInput { attributes :: NullOrUndefined (ListString) }
+  = GetSMSAttributesInput { attributes :: Maybe (ListString) }
 ```
 
 <p>The input for the <code>GetSMSAttributes</code> request.</p>
@@ -793,7 +793,7 @@ Constructs GetSMSAttributesInput from required parameters
 #### `newGetSMSAttributesInput'`
 
 ``` purescript
-newGetSMSAttributesInput' :: ({ attributes :: NullOrUndefined (ListString) } -> { attributes :: NullOrUndefined (ListString) }) -> GetSMSAttributesInput
+newGetSMSAttributesInput' :: ({ attributes :: Maybe (ListString) } -> { attributes :: Maybe (ListString) }) -> GetSMSAttributesInput
 ```
 
 Constructs GetSMSAttributesInput's fields from required parameters
@@ -802,7 +802,7 @@ Constructs GetSMSAttributesInput's fields from required parameters
 
 ``` purescript
 newtype GetSMSAttributesResponse
-  = GetSMSAttributesResponse { attributes :: NullOrUndefined (MapStringToString) }
+  = GetSMSAttributesResponse { attributes :: Maybe (MapStringToString) }
 ```
 
 <p>The response from the <code>GetSMSAttributes</code> request.</p>
@@ -827,7 +827,7 @@ Constructs GetSMSAttributesResponse from required parameters
 #### `newGetSMSAttributesResponse'`
 
 ``` purescript
-newGetSMSAttributesResponse' :: ({ attributes :: NullOrUndefined (MapStringToString) } -> { attributes :: NullOrUndefined (MapStringToString) }) -> GetSMSAttributesResponse
+newGetSMSAttributesResponse' :: ({ attributes :: Maybe (MapStringToString) } -> { attributes :: Maybe (MapStringToString) }) -> GetSMSAttributesResponse
 ```
 
 Constructs GetSMSAttributesResponse's fields from required parameters
@@ -870,7 +870,7 @@ Constructs GetSubscriptionAttributesInput's fields from required parameters
 
 ``` purescript
 newtype GetSubscriptionAttributesResponse
-  = GetSubscriptionAttributesResponse { "Attributes" :: NullOrUndefined (SubscriptionAttributesMap) }
+  = GetSubscriptionAttributesResponse { "Attributes" :: Maybe (SubscriptionAttributesMap) }
 ```
 
 <p>Response for GetSubscriptionAttributes action.</p>
@@ -895,7 +895,7 @@ Constructs GetSubscriptionAttributesResponse from required parameters
 #### `newGetSubscriptionAttributesResponse'`
 
 ``` purescript
-newGetSubscriptionAttributesResponse' :: ({ "Attributes" :: NullOrUndefined (SubscriptionAttributesMap) } -> { "Attributes" :: NullOrUndefined (SubscriptionAttributesMap) }) -> GetSubscriptionAttributesResponse
+newGetSubscriptionAttributesResponse' :: ({ "Attributes" :: Maybe (SubscriptionAttributesMap) } -> { "Attributes" :: Maybe (SubscriptionAttributesMap) }) -> GetSubscriptionAttributesResponse
 ```
 
 Constructs GetSubscriptionAttributesResponse's fields from required parameters
@@ -938,7 +938,7 @@ Constructs GetTopicAttributesInput's fields from required parameters
 
 ``` purescript
 newtype GetTopicAttributesResponse
-  = GetTopicAttributesResponse { "Attributes" :: NullOrUndefined (TopicAttributesMap) }
+  = GetTopicAttributesResponse { "Attributes" :: Maybe (TopicAttributesMap) }
 ```
 
 <p>Response for GetTopicAttributes action.</p>
@@ -963,7 +963,7 @@ Constructs GetTopicAttributesResponse from required parameters
 #### `newGetTopicAttributesResponse'`
 
 ``` purescript
-newGetTopicAttributesResponse' :: ({ "Attributes" :: NullOrUndefined (TopicAttributesMap) } -> { "Attributes" :: NullOrUndefined (TopicAttributesMap) }) -> GetTopicAttributesResponse
+newGetTopicAttributesResponse' :: ({ "Attributes" :: Maybe (TopicAttributesMap) } -> { "Attributes" :: Maybe (TopicAttributesMap) }) -> GetTopicAttributesResponse
 ```
 
 Constructs GetTopicAttributesResponse's fields from required parameters
@@ -972,7 +972,7 @@ Constructs GetTopicAttributesResponse's fields from required parameters
 
 ``` purescript
 newtype InternalErrorException
-  = InternalErrorException { message :: NullOrUndefined (String) }
+  = InternalErrorException { message :: Maybe (String) }
 ```
 
 <p>Indicates an internal service error.</p>
@@ -997,7 +997,7 @@ Constructs InternalErrorException from required parameters
 #### `newInternalErrorException'`
 
 ``` purescript
-newInternalErrorException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> InternalErrorException
+newInternalErrorException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> InternalErrorException
 ```
 
 Constructs InternalErrorException's fields from required parameters
@@ -1006,7 +1006,7 @@ Constructs InternalErrorException's fields from required parameters
 
 ``` purescript
 newtype InvalidParameterException
-  = InvalidParameterException { message :: NullOrUndefined (String) }
+  = InvalidParameterException { message :: Maybe (String) }
 ```
 
 <p>Indicates that a request parameter does not comply with the associated constraints.</p>
@@ -1031,7 +1031,7 @@ Constructs InvalidParameterException from required parameters
 #### `newInvalidParameterException'`
 
 ``` purescript
-newInvalidParameterException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> InvalidParameterException
+newInvalidParameterException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> InvalidParameterException
 ```
 
 Constructs InvalidParameterException's fields from required parameters
@@ -1040,7 +1040,7 @@ Constructs InvalidParameterException's fields from required parameters
 
 ``` purescript
 newtype InvalidParameterValueException
-  = InvalidParameterValueException { message :: NullOrUndefined (String) }
+  = InvalidParameterValueException { message :: Maybe (String) }
 ```
 
 <p>Indicates that a request parameter does not comply with the associated constraints.</p>
@@ -1065,7 +1065,7 @@ Constructs InvalidParameterValueException from required parameters
 #### `newInvalidParameterValueException'`
 
 ``` purescript
-newInvalidParameterValueException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> InvalidParameterValueException
+newInvalidParameterValueException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> InvalidParameterValueException
 ```
 
 Constructs InvalidParameterValueException's fields from required parameters
@@ -1074,7 +1074,7 @@ Constructs InvalidParameterValueException's fields from required parameters
 
 ``` purescript
 newtype ListEndpointsByPlatformApplicationInput
-  = ListEndpointsByPlatformApplicationInput { "PlatformApplicationArn" :: String, "NextToken" :: NullOrUndefined (String) }
+  = ListEndpointsByPlatformApplicationInput { "PlatformApplicationArn" :: String, "NextToken" :: Maybe (String) }
 ```
 
 <p>Input for ListEndpointsByPlatformApplication action.</p>
@@ -1099,7 +1099,7 @@ Constructs ListEndpointsByPlatformApplicationInput from required parameters
 #### `newListEndpointsByPlatformApplicationInput'`
 
 ``` purescript
-newListEndpointsByPlatformApplicationInput' :: String -> ({ "PlatformApplicationArn" :: String, "NextToken" :: NullOrUndefined (String) } -> { "PlatformApplicationArn" :: String, "NextToken" :: NullOrUndefined (String) }) -> ListEndpointsByPlatformApplicationInput
+newListEndpointsByPlatformApplicationInput' :: String -> ({ "PlatformApplicationArn" :: String, "NextToken" :: Maybe (String) } -> { "PlatformApplicationArn" :: String, "NextToken" :: Maybe (String) }) -> ListEndpointsByPlatformApplicationInput
 ```
 
 Constructs ListEndpointsByPlatformApplicationInput's fields from required parameters
@@ -1108,7 +1108,7 @@ Constructs ListEndpointsByPlatformApplicationInput's fields from required parame
 
 ``` purescript
 newtype ListEndpointsByPlatformApplicationResponse
-  = ListEndpointsByPlatformApplicationResponse { "Endpoints" :: NullOrUndefined (ListOfEndpoints), "NextToken" :: NullOrUndefined (String) }
+  = ListEndpointsByPlatformApplicationResponse { "Endpoints" :: Maybe (ListOfEndpoints), "NextToken" :: Maybe (String) }
 ```
 
 <p>Response for ListEndpointsByPlatformApplication action.</p>
@@ -1133,7 +1133,7 @@ Constructs ListEndpointsByPlatformApplicationResponse from required parameters
 #### `newListEndpointsByPlatformApplicationResponse'`
 
 ``` purescript
-newListEndpointsByPlatformApplicationResponse' :: ({ "Endpoints" :: NullOrUndefined (ListOfEndpoints), "NextToken" :: NullOrUndefined (String) } -> { "Endpoints" :: NullOrUndefined (ListOfEndpoints), "NextToken" :: NullOrUndefined (String) }) -> ListEndpointsByPlatformApplicationResponse
+newListEndpointsByPlatformApplicationResponse' :: ({ "Endpoints" :: Maybe (ListOfEndpoints), "NextToken" :: Maybe (String) } -> { "Endpoints" :: Maybe (ListOfEndpoints), "NextToken" :: Maybe (String) }) -> ListEndpointsByPlatformApplicationResponse
 ```
 
 Constructs ListEndpointsByPlatformApplicationResponse's fields from required parameters
@@ -1174,7 +1174,7 @@ Encode ListOfPlatformApplications
 
 ``` purescript
 newtype ListPhoneNumbersOptedOutInput
-  = ListPhoneNumbersOptedOutInput { nextToken :: NullOrUndefined (String) }
+  = ListPhoneNumbersOptedOutInput { nextToken :: Maybe (String) }
 ```
 
 <p>The input for the <code>ListPhoneNumbersOptedOut</code> action.</p>
@@ -1199,7 +1199,7 @@ Constructs ListPhoneNumbersOptedOutInput from required parameters
 #### `newListPhoneNumbersOptedOutInput'`
 
 ``` purescript
-newListPhoneNumbersOptedOutInput' :: ({ nextToken :: NullOrUndefined (String) } -> { nextToken :: NullOrUndefined (String) }) -> ListPhoneNumbersOptedOutInput
+newListPhoneNumbersOptedOutInput' :: ({ nextToken :: Maybe (String) } -> { nextToken :: Maybe (String) }) -> ListPhoneNumbersOptedOutInput
 ```
 
 Constructs ListPhoneNumbersOptedOutInput's fields from required parameters
@@ -1208,7 +1208,7 @@ Constructs ListPhoneNumbersOptedOutInput's fields from required parameters
 
 ``` purescript
 newtype ListPhoneNumbersOptedOutResponse
-  = ListPhoneNumbersOptedOutResponse { phoneNumbers :: NullOrUndefined (PhoneNumberList), nextToken :: NullOrUndefined (String) }
+  = ListPhoneNumbersOptedOutResponse { phoneNumbers :: Maybe (PhoneNumberList), nextToken :: Maybe (String) }
 ```
 
 <p>The response from the <code>ListPhoneNumbersOptedOut</code> action.</p>
@@ -1233,7 +1233,7 @@ Constructs ListPhoneNumbersOptedOutResponse from required parameters
 #### `newListPhoneNumbersOptedOutResponse'`
 
 ``` purescript
-newListPhoneNumbersOptedOutResponse' :: ({ phoneNumbers :: NullOrUndefined (PhoneNumberList), nextToken :: NullOrUndefined (String) } -> { phoneNumbers :: NullOrUndefined (PhoneNumberList), nextToken :: NullOrUndefined (String) }) -> ListPhoneNumbersOptedOutResponse
+newListPhoneNumbersOptedOutResponse' :: ({ phoneNumbers :: Maybe (PhoneNumberList), nextToken :: Maybe (String) } -> { phoneNumbers :: Maybe (PhoneNumberList), nextToken :: Maybe (String) }) -> ListPhoneNumbersOptedOutResponse
 ```
 
 Constructs ListPhoneNumbersOptedOutResponse's fields from required parameters
@@ -1242,7 +1242,7 @@ Constructs ListPhoneNumbersOptedOutResponse's fields from required parameters
 
 ``` purescript
 newtype ListPlatformApplicationsInput
-  = ListPlatformApplicationsInput { "NextToken" :: NullOrUndefined (String) }
+  = ListPlatformApplicationsInput { "NextToken" :: Maybe (String) }
 ```
 
 <p>Input for ListPlatformApplications action.</p>
@@ -1267,7 +1267,7 @@ Constructs ListPlatformApplicationsInput from required parameters
 #### `newListPlatformApplicationsInput'`
 
 ``` purescript
-newListPlatformApplicationsInput' :: ({ "NextToken" :: NullOrUndefined (String) } -> { "NextToken" :: NullOrUndefined (String) }) -> ListPlatformApplicationsInput
+newListPlatformApplicationsInput' :: ({ "NextToken" :: Maybe (String) } -> { "NextToken" :: Maybe (String) }) -> ListPlatformApplicationsInput
 ```
 
 Constructs ListPlatformApplicationsInput's fields from required parameters
@@ -1276,7 +1276,7 @@ Constructs ListPlatformApplicationsInput's fields from required parameters
 
 ``` purescript
 newtype ListPlatformApplicationsResponse
-  = ListPlatformApplicationsResponse { "PlatformApplications" :: NullOrUndefined (ListOfPlatformApplications), "NextToken" :: NullOrUndefined (String) }
+  = ListPlatformApplicationsResponse { "PlatformApplications" :: Maybe (ListOfPlatformApplications), "NextToken" :: Maybe (String) }
 ```
 
 <p>Response for ListPlatformApplications action.</p>
@@ -1301,7 +1301,7 @@ Constructs ListPlatformApplicationsResponse from required parameters
 #### `newListPlatformApplicationsResponse'`
 
 ``` purescript
-newListPlatformApplicationsResponse' :: ({ "PlatformApplications" :: NullOrUndefined (ListOfPlatformApplications), "NextToken" :: NullOrUndefined (String) } -> { "PlatformApplications" :: NullOrUndefined (ListOfPlatformApplications), "NextToken" :: NullOrUndefined (String) }) -> ListPlatformApplicationsResponse
+newListPlatformApplicationsResponse' :: ({ "PlatformApplications" :: Maybe (ListOfPlatformApplications), "NextToken" :: Maybe (String) } -> { "PlatformApplications" :: Maybe (ListOfPlatformApplications), "NextToken" :: Maybe (String) }) -> ListPlatformApplicationsResponse
 ```
 
 Constructs ListPlatformApplicationsResponse's fields from required parameters
@@ -1326,7 +1326,7 @@ Encode ListString
 
 ``` purescript
 newtype ListSubscriptionsByTopicInput
-  = ListSubscriptionsByTopicInput { "TopicArn" :: TopicARN', "NextToken" :: NullOrUndefined (NextToken') }
+  = ListSubscriptionsByTopicInput { "TopicArn" :: TopicARN', "NextToken" :: Maybe (NextToken') }
 ```
 
 <p>Input for ListSubscriptionsByTopic action.</p>
@@ -1351,7 +1351,7 @@ Constructs ListSubscriptionsByTopicInput from required parameters
 #### `newListSubscriptionsByTopicInput'`
 
 ``` purescript
-newListSubscriptionsByTopicInput' :: TopicARN' -> ({ "TopicArn" :: TopicARN', "NextToken" :: NullOrUndefined (NextToken') } -> { "TopicArn" :: TopicARN', "NextToken" :: NullOrUndefined (NextToken') }) -> ListSubscriptionsByTopicInput
+newListSubscriptionsByTopicInput' :: TopicARN' -> ({ "TopicArn" :: TopicARN', "NextToken" :: Maybe (NextToken') } -> { "TopicArn" :: TopicARN', "NextToken" :: Maybe (NextToken') }) -> ListSubscriptionsByTopicInput
 ```
 
 Constructs ListSubscriptionsByTopicInput's fields from required parameters
@@ -1360,7 +1360,7 @@ Constructs ListSubscriptionsByTopicInput's fields from required parameters
 
 ``` purescript
 newtype ListSubscriptionsByTopicResponse
-  = ListSubscriptionsByTopicResponse { "Subscriptions" :: NullOrUndefined (SubscriptionsList), "NextToken" :: NullOrUndefined (NextToken') }
+  = ListSubscriptionsByTopicResponse { "Subscriptions" :: Maybe (SubscriptionsList), "NextToken" :: Maybe (NextToken') }
 ```
 
 <p>Response for ListSubscriptionsByTopic action.</p>
@@ -1385,7 +1385,7 @@ Constructs ListSubscriptionsByTopicResponse from required parameters
 #### `newListSubscriptionsByTopicResponse'`
 
 ``` purescript
-newListSubscriptionsByTopicResponse' :: ({ "Subscriptions" :: NullOrUndefined (SubscriptionsList), "NextToken" :: NullOrUndefined (NextToken') } -> { "Subscriptions" :: NullOrUndefined (SubscriptionsList), "NextToken" :: NullOrUndefined (NextToken') }) -> ListSubscriptionsByTopicResponse
+newListSubscriptionsByTopicResponse' :: ({ "Subscriptions" :: Maybe (SubscriptionsList), "NextToken" :: Maybe (NextToken') } -> { "Subscriptions" :: Maybe (SubscriptionsList), "NextToken" :: Maybe (NextToken') }) -> ListSubscriptionsByTopicResponse
 ```
 
 Constructs ListSubscriptionsByTopicResponse's fields from required parameters
@@ -1394,7 +1394,7 @@ Constructs ListSubscriptionsByTopicResponse's fields from required parameters
 
 ``` purescript
 newtype ListSubscriptionsInput
-  = ListSubscriptionsInput { "NextToken" :: NullOrUndefined (NextToken') }
+  = ListSubscriptionsInput { "NextToken" :: Maybe (NextToken') }
 ```
 
 <p>Input for ListSubscriptions action.</p>
@@ -1419,7 +1419,7 @@ Constructs ListSubscriptionsInput from required parameters
 #### `newListSubscriptionsInput'`
 
 ``` purescript
-newListSubscriptionsInput' :: ({ "NextToken" :: NullOrUndefined (NextToken') } -> { "NextToken" :: NullOrUndefined (NextToken') }) -> ListSubscriptionsInput
+newListSubscriptionsInput' :: ({ "NextToken" :: Maybe (NextToken') } -> { "NextToken" :: Maybe (NextToken') }) -> ListSubscriptionsInput
 ```
 
 Constructs ListSubscriptionsInput's fields from required parameters
@@ -1428,7 +1428,7 @@ Constructs ListSubscriptionsInput's fields from required parameters
 
 ``` purescript
 newtype ListSubscriptionsResponse
-  = ListSubscriptionsResponse { "Subscriptions" :: NullOrUndefined (SubscriptionsList), "NextToken" :: NullOrUndefined (NextToken') }
+  = ListSubscriptionsResponse { "Subscriptions" :: Maybe (SubscriptionsList), "NextToken" :: Maybe (NextToken') }
 ```
 
 <p>Response for ListSubscriptions action</p>
@@ -1453,7 +1453,7 @@ Constructs ListSubscriptionsResponse from required parameters
 #### `newListSubscriptionsResponse'`
 
 ``` purescript
-newListSubscriptionsResponse' :: ({ "Subscriptions" :: NullOrUndefined (SubscriptionsList), "NextToken" :: NullOrUndefined (NextToken') } -> { "Subscriptions" :: NullOrUndefined (SubscriptionsList), "NextToken" :: NullOrUndefined (NextToken') }) -> ListSubscriptionsResponse
+newListSubscriptionsResponse' :: ({ "Subscriptions" :: Maybe (SubscriptionsList), "NextToken" :: Maybe (NextToken') } -> { "Subscriptions" :: Maybe (SubscriptionsList), "NextToken" :: Maybe (NextToken') }) -> ListSubscriptionsResponse
 ```
 
 Constructs ListSubscriptionsResponse's fields from required parameters
@@ -1462,7 +1462,7 @@ Constructs ListSubscriptionsResponse's fields from required parameters
 
 ``` purescript
 newtype ListTopicsInput
-  = ListTopicsInput { "NextToken" :: NullOrUndefined (NextToken') }
+  = ListTopicsInput { "NextToken" :: Maybe (NextToken') }
 ```
 
 ##### Instances
@@ -1485,7 +1485,7 @@ Constructs ListTopicsInput from required parameters
 #### `newListTopicsInput'`
 
 ``` purescript
-newListTopicsInput' :: ({ "NextToken" :: NullOrUndefined (NextToken') } -> { "NextToken" :: NullOrUndefined (NextToken') }) -> ListTopicsInput
+newListTopicsInput' :: ({ "NextToken" :: Maybe (NextToken') } -> { "NextToken" :: Maybe (NextToken') }) -> ListTopicsInput
 ```
 
 Constructs ListTopicsInput's fields from required parameters
@@ -1494,7 +1494,7 @@ Constructs ListTopicsInput's fields from required parameters
 
 ``` purescript
 newtype ListTopicsResponse
-  = ListTopicsResponse { "Topics" :: NullOrUndefined (TopicsList), "NextToken" :: NullOrUndefined (NextToken') }
+  = ListTopicsResponse { "Topics" :: Maybe (TopicsList), "NextToken" :: Maybe (NextToken') }
 ```
 
 <p>Response for ListTopics action.</p>
@@ -1519,7 +1519,7 @@ Constructs ListTopicsResponse from required parameters
 #### `newListTopicsResponse'`
 
 ``` purescript
-newListTopicsResponse' :: ({ "Topics" :: NullOrUndefined (TopicsList), "NextToken" :: NullOrUndefined (NextToken') } -> { "Topics" :: NullOrUndefined (TopicsList), "NextToken" :: NullOrUndefined (NextToken') }) -> ListTopicsResponse
+newListTopicsResponse' :: ({ "Topics" :: Maybe (TopicsList), "NextToken" :: Maybe (NextToken') } -> { "Topics" :: Maybe (TopicsList), "NextToken" :: Maybe (NextToken') }) -> ListTopicsResponse
 ```
 
 Constructs ListTopicsResponse's fields from required parameters
@@ -1560,7 +1560,7 @@ Encode MessageAttributeMap
 
 ``` purescript
 newtype MessageAttributeValue
-  = MessageAttributeValue { "DataType" :: String, "StringValue" :: NullOrUndefined (String), "BinaryValue" :: NullOrUndefined (Binary) }
+  = MessageAttributeValue { "DataType" :: String, "StringValue" :: Maybe (String), "BinaryValue" :: Maybe (Binary) }
 ```
 
 <p>The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>.</p> <p>Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html">Using Amazon SNS Message Attributes</a>.</p>
@@ -1585,7 +1585,7 @@ Constructs MessageAttributeValue from required parameters
 #### `newMessageAttributeValue'`
 
 ``` purescript
-newMessageAttributeValue' :: String -> ({ "DataType" :: String, "StringValue" :: NullOrUndefined (String), "BinaryValue" :: NullOrUndefined (Binary) } -> { "DataType" :: String, "StringValue" :: NullOrUndefined (String), "BinaryValue" :: NullOrUndefined (Binary) }) -> MessageAttributeValue
+newMessageAttributeValue' :: String -> ({ "DataType" :: String, "StringValue" :: Maybe (String), "BinaryValue" :: Maybe (Binary) } -> { "DataType" :: String, "StringValue" :: Maybe (String), "BinaryValue" :: Maybe (Binary) }) -> MessageAttributeValue
 ```
 
 Constructs MessageAttributeValue's fields from required parameters
@@ -1594,7 +1594,7 @@ Constructs MessageAttributeValue's fields from required parameters
 
 ``` purescript
 newtype NotFoundException
-  = NotFoundException { message :: NullOrUndefined (String) }
+  = NotFoundException { message :: Maybe (String) }
 ```
 
 <p>Indicates that the requested resource does not exist.</p>
@@ -1619,7 +1619,7 @@ Constructs NotFoundException from required parameters
 #### `newNotFoundException'`
 
 ``` purescript
-newNotFoundException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> NotFoundException
+newNotFoundException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> NotFoundException
 ```
 
 Constructs NotFoundException's fields from required parameters
@@ -1712,7 +1712,7 @@ Encode PhoneNumberList
 
 ``` purescript
 newtype PlatformApplication
-  = PlatformApplication { "PlatformApplicationArn" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (MapStringToString) }
+  = PlatformApplication { "PlatformApplicationArn" :: Maybe (String), "Attributes" :: Maybe (MapStringToString) }
 ```
 
 <p>Platform application object.</p>
@@ -1737,7 +1737,7 @@ Constructs PlatformApplication from required parameters
 #### `newPlatformApplication'`
 
 ``` purescript
-newPlatformApplication' :: ({ "PlatformApplicationArn" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (MapStringToString) } -> { "PlatformApplicationArn" :: NullOrUndefined (String), "Attributes" :: NullOrUndefined (MapStringToString) }) -> PlatformApplication
+newPlatformApplication' :: ({ "PlatformApplicationArn" :: Maybe (String), "Attributes" :: Maybe (MapStringToString) } -> { "PlatformApplicationArn" :: Maybe (String), "Attributes" :: Maybe (MapStringToString) }) -> PlatformApplication
 ```
 
 Constructs PlatformApplication's fields from required parameters
@@ -1746,7 +1746,7 @@ Constructs PlatformApplication's fields from required parameters
 
 ``` purescript
 newtype PlatformApplicationDisabledException
-  = PlatformApplicationDisabledException { message :: NullOrUndefined (String) }
+  = PlatformApplicationDisabledException { message :: Maybe (String) }
 ```
 
 <p>Exception error indicating platform application disabled.</p>
@@ -1771,7 +1771,7 @@ Constructs PlatformApplicationDisabledException from required parameters
 #### `newPlatformApplicationDisabledException'`
 
 ``` purescript
-newPlatformApplicationDisabledException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> PlatformApplicationDisabledException
+newPlatformApplicationDisabledException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> PlatformApplicationDisabledException
 ```
 
 Constructs PlatformApplicationDisabledException's fields from required parameters
@@ -1780,7 +1780,7 @@ Constructs PlatformApplicationDisabledException's fields from required parameter
 
 ``` purescript
 newtype PublishInput
-  = PublishInput { "TopicArn" :: NullOrUndefined (TopicARN'), "TargetArn" :: NullOrUndefined (String), "PhoneNumber" :: NullOrUndefined (String), "Message" :: Message', "Subject" :: NullOrUndefined (Subject'), "MessageStructure" :: NullOrUndefined (MessageStructure'), "MessageAttributes" :: NullOrUndefined (MessageAttributeMap) }
+  = PublishInput { "TopicArn" :: Maybe (TopicARN'), "TargetArn" :: Maybe (String), "PhoneNumber" :: Maybe (String), "Message" :: Message', "Subject" :: Maybe (Subject'), "MessageStructure" :: Maybe (MessageStructure'), "MessageAttributes" :: Maybe (MessageAttributeMap) }
 ```
 
 <p>Input for Publish action.</p>
@@ -1805,7 +1805,7 @@ Constructs PublishInput from required parameters
 #### `newPublishInput'`
 
 ``` purescript
-newPublishInput' :: Message' -> ({ "TopicArn" :: NullOrUndefined (TopicARN'), "TargetArn" :: NullOrUndefined (String), "PhoneNumber" :: NullOrUndefined (String), "Message" :: Message', "Subject" :: NullOrUndefined (Subject'), "MessageStructure" :: NullOrUndefined (MessageStructure'), "MessageAttributes" :: NullOrUndefined (MessageAttributeMap) } -> { "TopicArn" :: NullOrUndefined (TopicARN'), "TargetArn" :: NullOrUndefined (String), "PhoneNumber" :: NullOrUndefined (String), "Message" :: Message', "Subject" :: NullOrUndefined (Subject'), "MessageStructure" :: NullOrUndefined (MessageStructure'), "MessageAttributes" :: NullOrUndefined (MessageAttributeMap) }) -> PublishInput
+newPublishInput' :: Message' -> ({ "TopicArn" :: Maybe (TopicARN'), "TargetArn" :: Maybe (String), "PhoneNumber" :: Maybe (String), "Message" :: Message', "Subject" :: Maybe (Subject'), "MessageStructure" :: Maybe (MessageStructure'), "MessageAttributes" :: Maybe (MessageAttributeMap) } -> { "TopicArn" :: Maybe (TopicARN'), "TargetArn" :: Maybe (String), "PhoneNumber" :: Maybe (String), "Message" :: Message', "Subject" :: Maybe (Subject'), "MessageStructure" :: Maybe (MessageStructure'), "MessageAttributes" :: Maybe (MessageAttributeMap) }) -> PublishInput
 ```
 
 Constructs PublishInput's fields from required parameters
@@ -1814,7 +1814,7 @@ Constructs PublishInput's fields from required parameters
 
 ``` purescript
 newtype PublishResponse
-  = PublishResponse { "MessageId" :: NullOrUndefined (MessageId') }
+  = PublishResponse { "MessageId" :: Maybe (MessageId') }
 ```
 
 <p>Response for Publish action.</p>
@@ -1839,7 +1839,7 @@ Constructs PublishResponse from required parameters
 #### `newPublishResponse'`
 
 ``` purescript
-newPublishResponse' :: ({ "MessageId" :: NullOrUndefined (MessageId') } -> { "MessageId" :: NullOrUndefined (MessageId') }) -> PublishResponse
+newPublishResponse' :: ({ "MessageId" :: Maybe (MessageId') } -> { "MessageId" :: Maybe (MessageId') }) -> PublishResponse
 ```
 
 Constructs PublishResponse's fields from required parameters
@@ -2002,7 +2002,7 @@ Encode SetSMSAttributesResponse
 
 ``` purescript
 newtype SetSubscriptionAttributesInput
-  = SetSubscriptionAttributesInput { "SubscriptionArn" :: SubscriptionARN', "AttributeName" :: AttributeName', "AttributeValue" :: NullOrUndefined (AttributeValue') }
+  = SetSubscriptionAttributesInput { "SubscriptionArn" :: SubscriptionARN', "AttributeName" :: AttributeName', "AttributeValue" :: Maybe (AttributeValue') }
 ```
 
 <p>Input for SetSubscriptionAttributes action.</p>
@@ -2027,7 +2027,7 @@ Constructs SetSubscriptionAttributesInput from required parameters
 #### `newSetSubscriptionAttributesInput'`
 
 ``` purescript
-newSetSubscriptionAttributesInput' :: AttributeName' -> SubscriptionARN' -> ({ "SubscriptionArn" :: SubscriptionARN', "AttributeName" :: AttributeName', "AttributeValue" :: NullOrUndefined (AttributeValue') } -> { "SubscriptionArn" :: SubscriptionARN', "AttributeName" :: AttributeName', "AttributeValue" :: NullOrUndefined (AttributeValue') }) -> SetSubscriptionAttributesInput
+newSetSubscriptionAttributesInput' :: AttributeName' -> SubscriptionARN' -> ({ "SubscriptionArn" :: SubscriptionARN', "AttributeName" :: AttributeName', "AttributeValue" :: Maybe (AttributeValue') } -> { "SubscriptionArn" :: SubscriptionARN', "AttributeName" :: AttributeName', "AttributeValue" :: Maybe (AttributeValue') }) -> SetSubscriptionAttributesInput
 ```
 
 Constructs SetSubscriptionAttributesInput's fields from required parameters
@@ -2036,7 +2036,7 @@ Constructs SetSubscriptionAttributesInput's fields from required parameters
 
 ``` purescript
 newtype SetTopicAttributesInput
-  = SetTopicAttributesInput { "TopicArn" :: TopicARN', "AttributeName" :: AttributeName', "AttributeValue" :: NullOrUndefined (AttributeValue') }
+  = SetTopicAttributesInput { "TopicArn" :: TopicARN', "AttributeName" :: AttributeName', "AttributeValue" :: Maybe (AttributeValue') }
 ```
 
 <p>Input for SetTopicAttributes action.</p>
@@ -2061,7 +2061,7 @@ Constructs SetTopicAttributesInput from required parameters
 #### `newSetTopicAttributesInput'`
 
 ``` purescript
-newSetTopicAttributesInput' :: AttributeName' -> TopicARN' -> ({ "TopicArn" :: TopicARN', "AttributeName" :: AttributeName', "AttributeValue" :: NullOrUndefined (AttributeValue') } -> { "TopicArn" :: TopicARN', "AttributeName" :: AttributeName', "AttributeValue" :: NullOrUndefined (AttributeValue') }) -> SetTopicAttributesInput
+newSetTopicAttributesInput' :: AttributeName' -> TopicARN' -> ({ "TopicArn" :: TopicARN', "AttributeName" :: AttributeName', "AttributeValue" :: Maybe (AttributeValue') } -> { "TopicArn" :: TopicARN', "AttributeName" :: AttributeName', "AttributeValue" :: Maybe (AttributeValue') }) -> SetTopicAttributesInput
 ```
 
 Constructs SetTopicAttributesInput's fields from required parameters
@@ -2070,7 +2070,7 @@ Constructs SetTopicAttributesInput's fields from required parameters
 
 ``` purescript
 newtype SubscribeInput
-  = SubscribeInput { "TopicArn" :: TopicARN', "Protocol" :: Protocol', "Endpoint" :: NullOrUndefined (Endpoint') }
+  = SubscribeInput { "TopicArn" :: TopicARN', "Protocol" :: Protocol', "Endpoint" :: Maybe (Endpoint') }
 ```
 
 <p>Input for Subscribe action.</p>
@@ -2095,7 +2095,7 @@ Constructs SubscribeInput from required parameters
 #### `newSubscribeInput'`
 
 ``` purescript
-newSubscribeInput' :: Protocol' -> TopicARN' -> ({ "TopicArn" :: TopicARN', "Protocol" :: Protocol', "Endpoint" :: NullOrUndefined (Endpoint') } -> { "TopicArn" :: TopicARN', "Protocol" :: Protocol', "Endpoint" :: NullOrUndefined (Endpoint') }) -> SubscribeInput
+newSubscribeInput' :: Protocol' -> TopicARN' -> ({ "TopicArn" :: TopicARN', "Protocol" :: Protocol', "Endpoint" :: Maybe (Endpoint') } -> { "TopicArn" :: TopicARN', "Protocol" :: Protocol', "Endpoint" :: Maybe (Endpoint') }) -> SubscribeInput
 ```
 
 Constructs SubscribeInput's fields from required parameters
@@ -2104,7 +2104,7 @@ Constructs SubscribeInput's fields from required parameters
 
 ``` purescript
 newtype SubscribeResponse
-  = SubscribeResponse { "SubscriptionArn" :: NullOrUndefined (SubscriptionARN') }
+  = SubscribeResponse { "SubscriptionArn" :: Maybe (SubscriptionARN') }
 ```
 
 <p>Response for Subscribe action.</p>
@@ -2129,7 +2129,7 @@ Constructs SubscribeResponse from required parameters
 #### `newSubscribeResponse'`
 
 ``` purescript
-newSubscribeResponse' :: ({ "SubscriptionArn" :: NullOrUndefined (SubscriptionARN') } -> { "SubscriptionArn" :: NullOrUndefined (SubscriptionARN') }) -> SubscribeResponse
+newSubscribeResponse' :: ({ "SubscriptionArn" :: Maybe (SubscriptionARN') } -> { "SubscriptionArn" :: Maybe (SubscriptionARN') }) -> SubscribeResponse
 ```
 
 Constructs SubscribeResponse's fields from required parameters
@@ -2138,7 +2138,7 @@ Constructs SubscribeResponse's fields from required parameters
 
 ``` purescript
 newtype Subscription
-  = Subscription { "SubscriptionArn" :: NullOrUndefined (SubscriptionARN'), "Owner" :: NullOrUndefined (Account'), "Protocol" :: NullOrUndefined (Protocol'), "Endpoint" :: NullOrUndefined (Endpoint'), "TopicArn" :: NullOrUndefined (TopicARN') }
+  = Subscription { "SubscriptionArn" :: Maybe (SubscriptionARN'), "Owner" :: Maybe (Account'), "Protocol" :: Maybe (Protocol'), "Endpoint" :: Maybe (Endpoint'), "TopicArn" :: Maybe (TopicARN') }
 ```
 
 <p>A wrapper type for the attributes of an Amazon SNS subscription.</p>
@@ -2163,7 +2163,7 @@ Constructs Subscription from required parameters
 #### `newSubscription'`
 
 ``` purescript
-newSubscription' :: ({ "SubscriptionArn" :: NullOrUndefined (SubscriptionARN'), "Owner" :: NullOrUndefined (Account'), "Protocol" :: NullOrUndefined (Protocol'), "Endpoint" :: NullOrUndefined (Endpoint'), "TopicArn" :: NullOrUndefined (TopicARN') } -> { "SubscriptionArn" :: NullOrUndefined (SubscriptionARN'), "Owner" :: NullOrUndefined (Account'), "Protocol" :: NullOrUndefined (Protocol'), "Endpoint" :: NullOrUndefined (Endpoint'), "TopicArn" :: NullOrUndefined (TopicARN') }) -> Subscription
+newSubscription' :: ({ "SubscriptionArn" :: Maybe (SubscriptionARN'), "Owner" :: Maybe (Account'), "Protocol" :: Maybe (Protocol'), "Endpoint" :: Maybe (Endpoint'), "TopicArn" :: Maybe (TopicARN') } -> { "SubscriptionArn" :: Maybe (SubscriptionARN'), "Owner" :: Maybe (Account'), "Protocol" :: Maybe (Protocol'), "Endpoint" :: Maybe (Endpoint'), "TopicArn" :: Maybe (TopicARN') }) -> Subscription
 ```
 
 Constructs Subscription's fields from required parameters
@@ -2188,7 +2188,7 @@ Encode SubscriptionAttributesMap
 
 ``` purescript
 newtype SubscriptionLimitExceededException
-  = SubscriptionLimitExceededException { message :: NullOrUndefined (String) }
+  = SubscriptionLimitExceededException { message :: Maybe (String) }
 ```
 
 <p>Indicates that the customer already owns the maximum allowed number of subscriptions.</p>
@@ -2213,7 +2213,7 @@ Constructs SubscriptionLimitExceededException from required parameters
 #### `newSubscriptionLimitExceededException'`
 
 ``` purescript
-newSubscriptionLimitExceededException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> SubscriptionLimitExceededException
+newSubscriptionLimitExceededException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> SubscriptionLimitExceededException
 ```
 
 Constructs SubscriptionLimitExceededException's fields from required parameters
@@ -2238,7 +2238,7 @@ Encode SubscriptionsList
 
 ``` purescript
 newtype ThrottledException
-  = ThrottledException { message :: NullOrUndefined (String) }
+  = ThrottledException { message :: Maybe (String) }
 ```
 
 <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your account.</p>
@@ -2263,7 +2263,7 @@ Constructs ThrottledException from required parameters
 #### `newThrottledException'`
 
 ``` purescript
-newThrottledException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> ThrottledException
+newThrottledException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> ThrottledException
 ```
 
 Constructs ThrottledException's fields from required parameters
@@ -2272,7 +2272,7 @@ Constructs ThrottledException's fields from required parameters
 
 ``` purescript
 newtype Topic
-  = Topic { "TopicArn" :: NullOrUndefined (TopicARN') }
+  = Topic { "TopicArn" :: Maybe (TopicARN') }
 ```
 
 <p>A wrapper type for the topic's Amazon Resource Name (ARN). To retrieve a topic's attributes, use <code>GetTopicAttributes</code>.</p>
@@ -2297,7 +2297,7 @@ Constructs Topic from required parameters
 #### `newTopic'`
 
 ``` purescript
-newTopic' :: ({ "TopicArn" :: NullOrUndefined (TopicARN') } -> { "TopicArn" :: NullOrUndefined (TopicARN') }) -> Topic
+newTopic' :: ({ "TopicArn" :: Maybe (TopicARN') } -> { "TopicArn" :: Maybe (TopicARN') }) -> Topic
 ```
 
 Constructs Topic's fields from required parameters
@@ -2322,7 +2322,7 @@ Encode TopicAttributesMap
 
 ``` purescript
 newtype TopicLimitExceededException
-  = TopicLimitExceededException { message :: NullOrUndefined (String) }
+  = TopicLimitExceededException { message :: Maybe (String) }
 ```
 
 <p>Indicates that the customer already owns the maximum allowed number of topics.</p>
@@ -2347,7 +2347,7 @@ Constructs TopicLimitExceededException from required parameters
 #### `newTopicLimitExceededException'`
 
 ``` purescript
-newTopicLimitExceededException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> TopicLimitExceededException
+newTopicLimitExceededException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> TopicLimitExceededException
 ```
 
 Constructs TopicLimitExceededException's fields from required parameters

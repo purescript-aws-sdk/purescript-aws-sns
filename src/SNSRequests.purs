@@ -13,7 +13,7 @@ import AWS.SNS.Types as SNSTypes
 
 
 -- | <p>Adds a statement to a topic's access control policy, granting access for the specified AWS accounts to the specified actions.</p>
-addPermission :: forall eff. SNS.Service -> SNSTypes.AddPermissionInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+addPermission :: forall eff. SNS.Service -> SNSTypes.AddPermissionInput -> Aff (exception :: EXCEPTION | eff) Unit
 addPermission (SNS.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "addPermission"
 
@@ -49,19 +49,19 @@ createTopic (SNS.Service serviceImpl) = AWS.request serviceImpl method  where
 
 
 -- | <p>Deletes the endpoint for a device and mobile app from Amazon SNS. This action is idempotent. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p> <p>When you delete an endpoint that is also subscribed to a topic, then you must also unsubscribe the endpoint from the topic.</p>
-deleteEndpoint :: forall eff. SNS.Service -> SNSTypes.DeleteEndpointInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteEndpoint :: forall eff. SNS.Service -> SNSTypes.DeleteEndpointInput -> Aff (exception :: EXCEPTION | eff) Unit
 deleteEndpoint (SNS.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteEndpoint"
 
 
 -- | <p>Deletes a platform application object for one of the supported push notification services, such as APNS and GCM. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
-deletePlatformApplication :: forall eff. SNS.Service -> SNSTypes.DeletePlatformApplicationInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deletePlatformApplication :: forall eff. SNS.Service -> SNSTypes.DeletePlatformApplicationInput -> Aff (exception :: EXCEPTION | eff) Unit
 deletePlatformApplication (SNS.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deletePlatformApplication"
 
 
 -- | <p>Deletes a topic and all its subscriptions. Deleting a topic might prevent some messages previously sent to the topic from being delivered to subscribers. This action is idempotent, so deleting a topic that does not exist does not result in an error.</p>
-deleteTopic :: forall eff. SNS.Service -> SNSTypes.DeleteTopicInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteTopic :: forall eff. SNS.Service -> SNSTypes.DeleteTopicInput -> Aff (exception :: EXCEPTION | eff) Unit
 deleteTopic (SNS.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteTopic"
 
@@ -145,19 +145,19 @@ publish (SNS.Service serviceImpl) = AWS.request serviceImpl method  where
 
 
 -- | <p>Removes a statement from a topic's access control policy.</p>
-removePermission :: forall eff. SNS.Service -> SNSTypes.RemovePermissionInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+removePermission :: forall eff. SNS.Service -> SNSTypes.RemovePermissionInput -> Aff (exception :: EXCEPTION | eff) Unit
 removePermission (SNS.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "removePermission"
 
 
 -- | <p>Sets the attributes for an endpoint for a device on one of the supported push notification services, such as GCM and APNS. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
-setEndpointAttributes :: forall eff. SNS.Service -> SNSTypes.SetEndpointAttributesInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+setEndpointAttributes :: forall eff. SNS.Service -> SNSTypes.SetEndpointAttributesInput -> Aff (exception :: EXCEPTION | eff) Unit
 setEndpointAttributes (SNS.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "setEndpointAttributes"
 
 
 -- | <p>Sets the attributes of the platform application object for the supported push notification services, such as APNS and GCM. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. For information on configuring attributes for message delivery status, see <a href="http://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon SNS Application Attributes for Message Delivery Status</a>. </p>
-setPlatformApplicationAttributes :: forall eff. SNS.Service -> SNSTypes.SetPlatformApplicationAttributesInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+setPlatformApplicationAttributes :: forall eff. SNS.Service -> SNSTypes.SetPlatformApplicationAttributesInput -> Aff (exception :: EXCEPTION | eff) Unit
 setPlatformApplicationAttributes (SNS.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "setPlatformApplicationAttributes"
 
@@ -169,13 +169,13 @@ setSMSAttributes (SNS.Service serviceImpl) = AWS.request serviceImpl method  whe
 
 
 -- | <p>Allows a subscription owner to set an attribute of the topic to a new value.</p>
-setSubscriptionAttributes :: forall eff. SNS.Service -> SNSTypes.SetSubscriptionAttributesInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+setSubscriptionAttributes :: forall eff. SNS.Service -> SNSTypes.SetSubscriptionAttributesInput -> Aff (exception :: EXCEPTION | eff) Unit
 setSubscriptionAttributes (SNS.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "setSubscriptionAttributes"
 
 
 -- | <p>Allows a topic owner to set an attribute of the topic to a new value.</p>
-setTopicAttributes :: forall eff. SNS.Service -> SNSTypes.SetTopicAttributesInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+setTopicAttributes :: forall eff. SNS.Service -> SNSTypes.SetTopicAttributesInput -> Aff (exception :: EXCEPTION | eff) Unit
 setTopicAttributes (SNS.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "setTopicAttributes"
 
@@ -187,6 +187,6 @@ subscribe (SNS.Service serviceImpl) = AWS.request serviceImpl method  where
 
 
 -- | <p>Deletes a subscription. If the subscription requires authentication for deletion, only the owner of the subscription or the topic's owner can unsubscribe, and an AWS signature is required. If the <code>Unsubscribe</code> call does not require authentication and the requester is not the subscription owner, a final cancellation message is delivered to the endpoint, so that the endpoint owner can easily resubscribe to the topic if the <code>Unsubscribe</code> request was unintended.</p>
-unsubscribe :: forall eff. SNS.Service -> SNSTypes.UnsubscribeInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+unsubscribe :: forall eff. SNS.Service -> SNSTypes.UnsubscribeInput -> Aff (exception :: EXCEPTION | eff) Unit
 unsubscribe (SNS.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "unsubscribe"

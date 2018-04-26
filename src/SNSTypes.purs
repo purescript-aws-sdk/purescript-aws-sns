@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -52,7 +51,7 @@ newAddPermissionInput' _AWSAccountId _ActionName _Label _TopicArn customize = (A
 
 -- | <p>Indicates that the user has been denied access to the requested resource.</p>
 newtype AuthorizationErrorException = AuthorizationErrorException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeAuthorizationErrorException :: Newtype AuthorizationErrorException _
 derive instance repGenericAuthorizationErrorException :: Generic AuthorizationErrorException _
@@ -62,12 +61,12 @@ instance encodeAuthorizationErrorException :: Encode AuthorizationErrorException
 
 -- | Constructs AuthorizationErrorException from required parameters
 newAuthorizationErrorException :: AuthorizationErrorException
-newAuthorizationErrorException  = AuthorizationErrorException { "message": (NullOrUndefined Nothing) }
+newAuthorizationErrorException  = AuthorizationErrorException { "message": Nothing }
 
 -- | Constructs AuthorizationErrorException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAuthorizationErrorException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> AuthorizationErrorException
-newAuthorizationErrorException'  customize = (AuthorizationErrorException <<< customize) { "message": (NullOrUndefined Nothing) }
+newAuthorizationErrorException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> AuthorizationErrorException
+newAuthorizationErrorException'  customize = (AuthorizationErrorException <<< customize) { "message": Nothing }
 
 
 
@@ -103,7 +102,7 @@ newCheckIfPhoneNumberIsOptedOutInput' _phoneNumber customize = (CheckIfPhoneNumb
 
 -- | <p>The response from the <code>CheckIfPhoneNumberIsOptedOut</code> action.</p>
 newtype CheckIfPhoneNumberIsOptedOutResponse = CheckIfPhoneNumberIsOptedOutResponse 
-  { "isOptedOut" :: NullOrUndefined (Boolean)
+  { "isOptedOut" :: Maybe (Boolean)
   }
 derive instance newtypeCheckIfPhoneNumberIsOptedOutResponse :: Newtype CheckIfPhoneNumberIsOptedOutResponse _
 derive instance repGenericCheckIfPhoneNumberIsOptedOutResponse :: Generic CheckIfPhoneNumberIsOptedOutResponse _
@@ -113,12 +112,12 @@ instance encodeCheckIfPhoneNumberIsOptedOutResponse :: Encode CheckIfPhoneNumber
 
 -- | Constructs CheckIfPhoneNumberIsOptedOutResponse from required parameters
 newCheckIfPhoneNumberIsOptedOutResponse :: CheckIfPhoneNumberIsOptedOutResponse
-newCheckIfPhoneNumberIsOptedOutResponse  = CheckIfPhoneNumberIsOptedOutResponse { "isOptedOut": (NullOrUndefined Nothing) }
+newCheckIfPhoneNumberIsOptedOutResponse  = CheckIfPhoneNumberIsOptedOutResponse { "isOptedOut": Nothing }
 
 -- | Constructs CheckIfPhoneNumberIsOptedOutResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCheckIfPhoneNumberIsOptedOutResponse' :: ( { "isOptedOut" :: NullOrUndefined (Boolean) } -> {"isOptedOut" :: NullOrUndefined (Boolean) } ) -> CheckIfPhoneNumberIsOptedOutResponse
-newCheckIfPhoneNumberIsOptedOutResponse'  customize = (CheckIfPhoneNumberIsOptedOutResponse <<< customize) { "isOptedOut": (NullOrUndefined Nothing) }
+newCheckIfPhoneNumberIsOptedOutResponse' :: ( { "isOptedOut" :: Maybe (Boolean) } -> {"isOptedOut" :: Maybe (Boolean) } ) -> CheckIfPhoneNumberIsOptedOutResponse
+newCheckIfPhoneNumberIsOptedOutResponse'  customize = (CheckIfPhoneNumberIsOptedOutResponse <<< customize) { "isOptedOut": Nothing }
 
 
 
@@ -126,7 +125,7 @@ newCheckIfPhoneNumberIsOptedOutResponse'  customize = (CheckIfPhoneNumberIsOpted
 newtype ConfirmSubscriptionInput = ConfirmSubscriptionInput 
   { "TopicArn" :: (TopicARN')
   , "Token" :: (Token')
-  , "AuthenticateOnUnsubscribe" :: NullOrUndefined (AuthenticateOnUnsubscribe')
+  , "AuthenticateOnUnsubscribe" :: Maybe (AuthenticateOnUnsubscribe')
   }
 derive instance newtypeConfirmSubscriptionInput :: Newtype ConfirmSubscriptionInput _
 derive instance repGenericConfirmSubscriptionInput :: Generic ConfirmSubscriptionInput _
@@ -136,18 +135,18 @@ instance encodeConfirmSubscriptionInput :: Encode ConfirmSubscriptionInput where
 
 -- | Constructs ConfirmSubscriptionInput from required parameters
 newConfirmSubscriptionInput :: Token' -> TopicARN' -> ConfirmSubscriptionInput
-newConfirmSubscriptionInput _Token _TopicArn = ConfirmSubscriptionInput { "Token": _Token, "TopicArn": _TopicArn, "AuthenticateOnUnsubscribe": (NullOrUndefined Nothing) }
+newConfirmSubscriptionInput _Token _TopicArn = ConfirmSubscriptionInput { "Token": _Token, "TopicArn": _TopicArn, "AuthenticateOnUnsubscribe": Nothing }
 
 -- | Constructs ConfirmSubscriptionInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newConfirmSubscriptionInput' :: Token' -> TopicARN' -> ( { "TopicArn" :: (TopicARN') , "Token" :: (Token') , "AuthenticateOnUnsubscribe" :: NullOrUndefined (AuthenticateOnUnsubscribe') } -> {"TopicArn" :: (TopicARN') , "Token" :: (Token') , "AuthenticateOnUnsubscribe" :: NullOrUndefined (AuthenticateOnUnsubscribe') } ) -> ConfirmSubscriptionInput
-newConfirmSubscriptionInput' _Token _TopicArn customize = (ConfirmSubscriptionInput <<< customize) { "Token": _Token, "TopicArn": _TopicArn, "AuthenticateOnUnsubscribe": (NullOrUndefined Nothing) }
+newConfirmSubscriptionInput' :: Token' -> TopicARN' -> ( { "TopicArn" :: (TopicARN') , "Token" :: (Token') , "AuthenticateOnUnsubscribe" :: Maybe (AuthenticateOnUnsubscribe') } -> {"TopicArn" :: (TopicARN') , "Token" :: (Token') , "AuthenticateOnUnsubscribe" :: Maybe (AuthenticateOnUnsubscribe') } ) -> ConfirmSubscriptionInput
+newConfirmSubscriptionInput' _Token _TopicArn customize = (ConfirmSubscriptionInput <<< customize) { "Token": _Token, "TopicArn": _TopicArn, "AuthenticateOnUnsubscribe": Nothing }
 
 
 
 -- | <p>Response for ConfirmSubscriptions action.</p>
 newtype ConfirmSubscriptionResponse = ConfirmSubscriptionResponse 
-  { "SubscriptionArn" :: NullOrUndefined (SubscriptionARN')
+  { "SubscriptionArn" :: Maybe (SubscriptionARN')
   }
 derive instance newtypeConfirmSubscriptionResponse :: Newtype ConfirmSubscriptionResponse _
 derive instance repGenericConfirmSubscriptionResponse :: Generic ConfirmSubscriptionResponse _
@@ -157,18 +156,18 @@ instance encodeConfirmSubscriptionResponse :: Encode ConfirmSubscriptionResponse
 
 -- | Constructs ConfirmSubscriptionResponse from required parameters
 newConfirmSubscriptionResponse :: ConfirmSubscriptionResponse
-newConfirmSubscriptionResponse  = ConfirmSubscriptionResponse { "SubscriptionArn": (NullOrUndefined Nothing) }
+newConfirmSubscriptionResponse  = ConfirmSubscriptionResponse { "SubscriptionArn": Nothing }
 
 -- | Constructs ConfirmSubscriptionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newConfirmSubscriptionResponse' :: ( { "SubscriptionArn" :: NullOrUndefined (SubscriptionARN') } -> {"SubscriptionArn" :: NullOrUndefined (SubscriptionARN') } ) -> ConfirmSubscriptionResponse
-newConfirmSubscriptionResponse'  customize = (ConfirmSubscriptionResponse <<< customize) { "SubscriptionArn": (NullOrUndefined Nothing) }
+newConfirmSubscriptionResponse' :: ( { "SubscriptionArn" :: Maybe (SubscriptionARN') } -> {"SubscriptionArn" :: Maybe (SubscriptionARN') } ) -> ConfirmSubscriptionResponse
+newConfirmSubscriptionResponse'  customize = (ConfirmSubscriptionResponse <<< customize) { "SubscriptionArn": Nothing }
 
 
 
 -- | <p>Response from CreateEndpoint action.</p>
 newtype CreateEndpointResponse = CreateEndpointResponse 
-  { "EndpointArn" :: NullOrUndefined (String)
+  { "EndpointArn" :: Maybe (String)
   }
 derive instance newtypeCreateEndpointResponse :: Newtype CreateEndpointResponse _
 derive instance repGenericCreateEndpointResponse :: Generic CreateEndpointResponse _
@@ -178,12 +177,12 @@ instance encodeCreateEndpointResponse :: Encode CreateEndpointResponse where enc
 
 -- | Constructs CreateEndpointResponse from required parameters
 newCreateEndpointResponse :: CreateEndpointResponse
-newCreateEndpointResponse  = CreateEndpointResponse { "EndpointArn": (NullOrUndefined Nothing) }
+newCreateEndpointResponse  = CreateEndpointResponse { "EndpointArn": Nothing }
 
 -- | Constructs CreateEndpointResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateEndpointResponse' :: ( { "EndpointArn" :: NullOrUndefined (String) } -> {"EndpointArn" :: NullOrUndefined (String) } ) -> CreateEndpointResponse
-newCreateEndpointResponse'  customize = (CreateEndpointResponse <<< customize) { "EndpointArn": (NullOrUndefined Nothing) }
+newCreateEndpointResponse' :: ( { "EndpointArn" :: Maybe (String) } -> {"EndpointArn" :: Maybe (String) } ) -> CreateEndpointResponse
+newCreateEndpointResponse'  customize = (CreateEndpointResponse <<< customize) { "EndpointArn": Nothing }
 
 
 
@@ -212,7 +211,7 @@ newCreatePlatformApplicationInput' _Attributes _Name _Platform customize = (Crea
 
 -- | <p>Response from CreatePlatformApplication action.</p>
 newtype CreatePlatformApplicationResponse = CreatePlatformApplicationResponse 
-  { "PlatformApplicationArn" :: NullOrUndefined (String)
+  { "PlatformApplicationArn" :: Maybe (String)
   }
 derive instance newtypeCreatePlatformApplicationResponse :: Newtype CreatePlatformApplicationResponse _
 derive instance repGenericCreatePlatformApplicationResponse :: Generic CreatePlatformApplicationResponse _
@@ -222,12 +221,12 @@ instance encodeCreatePlatformApplicationResponse :: Encode CreatePlatformApplica
 
 -- | Constructs CreatePlatformApplicationResponse from required parameters
 newCreatePlatformApplicationResponse :: CreatePlatformApplicationResponse
-newCreatePlatformApplicationResponse  = CreatePlatformApplicationResponse { "PlatformApplicationArn": (NullOrUndefined Nothing) }
+newCreatePlatformApplicationResponse  = CreatePlatformApplicationResponse { "PlatformApplicationArn": Nothing }
 
 -- | Constructs CreatePlatformApplicationResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreatePlatformApplicationResponse' :: ( { "PlatformApplicationArn" :: NullOrUndefined (String) } -> {"PlatformApplicationArn" :: NullOrUndefined (String) } ) -> CreatePlatformApplicationResponse
-newCreatePlatformApplicationResponse'  customize = (CreatePlatformApplicationResponse <<< customize) { "PlatformApplicationArn": (NullOrUndefined Nothing) }
+newCreatePlatformApplicationResponse' :: ( { "PlatformApplicationArn" :: Maybe (String) } -> {"PlatformApplicationArn" :: Maybe (String) } ) -> CreatePlatformApplicationResponse
+newCreatePlatformApplicationResponse'  customize = (CreatePlatformApplicationResponse <<< customize) { "PlatformApplicationArn": Nothing }
 
 
 
@@ -235,8 +234,8 @@ newCreatePlatformApplicationResponse'  customize = (CreatePlatformApplicationRes
 newtype CreatePlatformEndpointInput = CreatePlatformEndpointInput 
   { "PlatformApplicationArn" :: (String)
   , "Token" :: (String)
-  , "CustomUserData" :: NullOrUndefined (String)
-  , "Attributes" :: NullOrUndefined (MapStringToString)
+  , "CustomUserData" :: Maybe (String)
+  , "Attributes" :: Maybe (MapStringToString)
   }
 derive instance newtypeCreatePlatformEndpointInput :: Newtype CreatePlatformEndpointInput _
 derive instance repGenericCreatePlatformEndpointInput :: Generic CreatePlatformEndpointInput _
@@ -246,12 +245,12 @@ instance encodeCreatePlatformEndpointInput :: Encode CreatePlatformEndpointInput
 
 -- | Constructs CreatePlatformEndpointInput from required parameters
 newCreatePlatformEndpointInput :: String -> String -> CreatePlatformEndpointInput
-newCreatePlatformEndpointInput _PlatformApplicationArn _Token = CreatePlatformEndpointInput { "PlatformApplicationArn": _PlatformApplicationArn, "Token": _Token, "Attributes": (NullOrUndefined Nothing), "CustomUserData": (NullOrUndefined Nothing) }
+newCreatePlatformEndpointInput _PlatformApplicationArn _Token = CreatePlatformEndpointInput { "PlatformApplicationArn": _PlatformApplicationArn, "Token": _Token, "Attributes": Nothing, "CustomUserData": Nothing }
 
 -- | Constructs CreatePlatformEndpointInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreatePlatformEndpointInput' :: String -> String -> ( { "PlatformApplicationArn" :: (String) , "Token" :: (String) , "CustomUserData" :: NullOrUndefined (String) , "Attributes" :: NullOrUndefined (MapStringToString) } -> {"PlatformApplicationArn" :: (String) , "Token" :: (String) , "CustomUserData" :: NullOrUndefined (String) , "Attributes" :: NullOrUndefined (MapStringToString) } ) -> CreatePlatformEndpointInput
-newCreatePlatformEndpointInput' _PlatformApplicationArn _Token customize = (CreatePlatformEndpointInput <<< customize) { "PlatformApplicationArn": _PlatformApplicationArn, "Token": _Token, "Attributes": (NullOrUndefined Nothing), "CustomUserData": (NullOrUndefined Nothing) }
+newCreatePlatformEndpointInput' :: String -> String -> ( { "PlatformApplicationArn" :: (String) , "Token" :: (String) , "CustomUserData" :: Maybe (String) , "Attributes" :: Maybe (MapStringToString) } -> {"PlatformApplicationArn" :: (String) , "Token" :: (String) , "CustomUserData" :: Maybe (String) , "Attributes" :: Maybe (MapStringToString) } ) -> CreatePlatformEndpointInput
+newCreatePlatformEndpointInput' _PlatformApplicationArn _Token customize = (CreatePlatformEndpointInput <<< customize) { "PlatformApplicationArn": _PlatformApplicationArn, "Token": _Token, "Attributes": Nothing, "CustomUserData": Nothing }
 
 
 
@@ -278,7 +277,7 @@ newCreateTopicInput' _Name customize = (CreateTopicInput <<< customize) { "Name"
 
 -- | <p>Response from CreateTopic action.</p>
 newtype CreateTopicResponse = CreateTopicResponse 
-  { "TopicArn" :: NullOrUndefined (TopicARN')
+  { "TopicArn" :: Maybe (TopicARN')
   }
 derive instance newtypeCreateTopicResponse :: Newtype CreateTopicResponse _
 derive instance repGenericCreateTopicResponse :: Generic CreateTopicResponse _
@@ -288,12 +287,12 @@ instance encodeCreateTopicResponse :: Encode CreateTopicResponse where encode = 
 
 -- | Constructs CreateTopicResponse from required parameters
 newCreateTopicResponse :: CreateTopicResponse
-newCreateTopicResponse  = CreateTopicResponse { "TopicArn": (NullOrUndefined Nothing) }
+newCreateTopicResponse  = CreateTopicResponse { "TopicArn": Nothing }
 
 -- | Constructs CreateTopicResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateTopicResponse' :: ( { "TopicArn" :: NullOrUndefined (TopicARN') } -> {"TopicArn" :: NullOrUndefined (TopicARN') } ) -> CreateTopicResponse
-newCreateTopicResponse'  customize = (CreateTopicResponse <<< customize) { "TopicArn": (NullOrUndefined Nothing) }
+newCreateTopicResponse' :: ( { "TopicArn" :: Maybe (TopicARN') } -> {"TopicArn" :: Maybe (TopicARN') } ) -> CreateTopicResponse
+newCreateTopicResponse'  customize = (CreateTopicResponse <<< customize) { "TopicArn": Nothing }
 
 
 
@@ -370,8 +369,8 @@ newDeleteTopicInput' _TopicArn customize = (DeleteTopicInput <<< customize) { "T
 
 -- | <p>Endpoint for mobile app and device.</p>
 newtype Endpoint = Endpoint 
-  { "EndpointArn" :: NullOrUndefined (String)
-  , "Attributes" :: NullOrUndefined (MapStringToString)
+  { "EndpointArn" :: Maybe (String)
+  , "Attributes" :: Maybe (MapStringToString)
   }
 derive instance newtypeEndpoint :: Newtype Endpoint _
 derive instance repGenericEndpoint :: Generic Endpoint _
@@ -381,18 +380,18 @@ instance encodeEndpoint :: Encode Endpoint where encode = genericEncode options
 
 -- | Constructs Endpoint from required parameters
 newEndpoint :: Endpoint
-newEndpoint  = Endpoint { "Attributes": (NullOrUndefined Nothing), "EndpointArn": (NullOrUndefined Nothing) }
+newEndpoint  = Endpoint { "Attributes": Nothing, "EndpointArn": Nothing }
 
 -- | Constructs Endpoint's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEndpoint' :: ( { "EndpointArn" :: NullOrUndefined (String) , "Attributes" :: NullOrUndefined (MapStringToString) } -> {"EndpointArn" :: NullOrUndefined (String) , "Attributes" :: NullOrUndefined (MapStringToString) } ) -> Endpoint
-newEndpoint'  customize = (Endpoint <<< customize) { "Attributes": (NullOrUndefined Nothing), "EndpointArn": (NullOrUndefined Nothing) }
+newEndpoint' :: ( { "EndpointArn" :: Maybe (String) , "Attributes" :: Maybe (MapStringToString) } -> {"EndpointArn" :: Maybe (String) , "Attributes" :: Maybe (MapStringToString) } ) -> Endpoint
+newEndpoint'  customize = (Endpoint <<< customize) { "Attributes": Nothing, "EndpointArn": Nothing }
 
 
 
 -- | <p>Exception error indicating endpoint disabled.</p>
 newtype EndpointDisabledException = EndpointDisabledException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeEndpointDisabledException :: Newtype EndpointDisabledException _
 derive instance repGenericEndpointDisabledException :: Generic EndpointDisabledException _
@@ -402,12 +401,12 @@ instance encodeEndpointDisabledException :: Encode EndpointDisabledException whe
 
 -- | Constructs EndpointDisabledException from required parameters
 newEndpointDisabledException :: EndpointDisabledException
-newEndpointDisabledException  = EndpointDisabledException { "message": (NullOrUndefined Nothing) }
+newEndpointDisabledException  = EndpointDisabledException { "message": Nothing }
 
 -- | Constructs EndpointDisabledException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEndpointDisabledException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> EndpointDisabledException
-newEndpointDisabledException'  customize = (EndpointDisabledException <<< customize) { "message": (NullOrUndefined Nothing) }
+newEndpointDisabledException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> EndpointDisabledException
+newEndpointDisabledException'  customize = (EndpointDisabledException <<< customize) { "message": Nothing }
 
 
 
@@ -434,7 +433,7 @@ newGetEndpointAttributesInput' _EndpointArn customize = (GetEndpointAttributesIn
 
 -- | <p>Response from GetEndpointAttributes of the EndpointArn.</p>
 newtype GetEndpointAttributesResponse = GetEndpointAttributesResponse 
-  { "Attributes" :: NullOrUndefined (MapStringToString)
+  { "Attributes" :: Maybe (MapStringToString)
   }
 derive instance newtypeGetEndpointAttributesResponse :: Newtype GetEndpointAttributesResponse _
 derive instance repGenericGetEndpointAttributesResponse :: Generic GetEndpointAttributesResponse _
@@ -444,12 +443,12 @@ instance encodeGetEndpointAttributesResponse :: Encode GetEndpointAttributesResp
 
 -- | Constructs GetEndpointAttributesResponse from required parameters
 newGetEndpointAttributesResponse :: GetEndpointAttributesResponse
-newGetEndpointAttributesResponse  = GetEndpointAttributesResponse { "Attributes": (NullOrUndefined Nothing) }
+newGetEndpointAttributesResponse  = GetEndpointAttributesResponse { "Attributes": Nothing }
 
 -- | Constructs GetEndpointAttributesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetEndpointAttributesResponse' :: ( { "Attributes" :: NullOrUndefined (MapStringToString) } -> {"Attributes" :: NullOrUndefined (MapStringToString) } ) -> GetEndpointAttributesResponse
-newGetEndpointAttributesResponse'  customize = (GetEndpointAttributesResponse <<< customize) { "Attributes": (NullOrUndefined Nothing) }
+newGetEndpointAttributesResponse' :: ( { "Attributes" :: Maybe (MapStringToString) } -> {"Attributes" :: Maybe (MapStringToString) } ) -> GetEndpointAttributesResponse
+newGetEndpointAttributesResponse'  customize = (GetEndpointAttributesResponse <<< customize) { "Attributes": Nothing }
 
 
 
@@ -476,7 +475,7 @@ newGetPlatformApplicationAttributesInput' _PlatformApplicationArn customize = (G
 
 -- | <p>Response for GetPlatformApplicationAttributes action.</p>
 newtype GetPlatformApplicationAttributesResponse = GetPlatformApplicationAttributesResponse 
-  { "Attributes" :: NullOrUndefined (MapStringToString)
+  { "Attributes" :: Maybe (MapStringToString)
   }
 derive instance newtypeGetPlatformApplicationAttributesResponse :: Newtype GetPlatformApplicationAttributesResponse _
 derive instance repGenericGetPlatformApplicationAttributesResponse :: Generic GetPlatformApplicationAttributesResponse _
@@ -486,18 +485,18 @@ instance encodeGetPlatformApplicationAttributesResponse :: Encode GetPlatformApp
 
 -- | Constructs GetPlatformApplicationAttributesResponse from required parameters
 newGetPlatformApplicationAttributesResponse :: GetPlatformApplicationAttributesResponse
-newGetPlatformApplicationAttributesResponse  = GetPlatformApplicationAttributesResponse { "Attributes": (NullOrUndefined Nothing) }
+newGetPlatformApplicationAttributesResponse  = GetPlatformApplicationAttributesResponse { "Attributes": Nothing }
 
 -- | Constructs GetPlatformApplicationAttributesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetPlatformApplicationAttributesResponse' :: ( { "Attributes" :: NullOrUndefined (MapStringToString) } -> {"Attributes" :: NullOrUndefined (MapStringToString) } ) -> GetPlatformApplicationAttributesResponse
-newGetPlatformApplicationAttributesResponse'  customize = (GetPlatformApplicationAttributesResponse <<< customize) { "Attributes": (NullOrUndefined Nothing) }
+newGetPlatformApplicationAttributesResponse' :: ( { "Attributes" :: Maybe (MapStringToString) } -> {"Attributes" :: Maybe (MapStringToString) } ) -> GetPlatformApplicationAttributesResponse
+newGetPlatformApplicationAttributesResponse'  customize = (GetPlatformApplicationAttributesResponse <<< customize) { "Attributes": Nothing }
 
 
 
 -- | <p>The input for the <code>GetSMSAttributes</code> request.</p>
 newtype GetSMSAttributesInput = GetSMSAttributesInput 
-  { "attributes" :: NullOrUndefined (ListString)
+  { "attributes" :: Maybe (ListString)
   }
 derive instance newtypeGetSMSAttributesInput :: Newtype GetSMSAttributesInput _
 derive instance repGenericGetSMSAttributesInput :: Generic GetSMSAttributesInput _
@@ -507,18 +506,18 @@ instance encodeGetSMSAttributesInput :: Encode GetSMSAttributesInput where encod
 
 -- | Constructs GetSMSAttributesInput from required parameters
 newGetSMSAttributesInput :: GetSMSAttributesInput
-newGetSMSAttributesInput  = GetSMSAttributesInput { "attributes": (NullOrUndefined Nothing) }
+newGetSMSAttributesInput  = GetSMSAttributesInput { "attributes": Nothing }
 
 -- | Constructs GetSMSAttributesInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetSMSAttributesInput' :: ( { "attributes" :: NullOrUndefined (ListString) } -> {"attributes" :: NullOrUndefined (ListString) } ) -> GetSMSAttributesInput
-newGetSMSAttributesInput'  customize = (GetSMSAttributesInput <<< customize) { "attributes": (NullOrUndefined Nothing) }
+newGetSMSAttributesInput' :: ( { "attributes" :: Maybe (ListString) } -> {"attributes" :: Maybe (ListString) } ) -> GetSMSAttributesInput
+newGetSMSAttributesInput'  customize = (GetSMSAttributesInput <<< customize) { "attributes": Nothing }
 
 
 
 -- | <p>The response from the <code>GetSMSAttributes</code> request.</p>
 newtype GetSMSAttributesResponse = GetSMSAttributesResponse 
-  { "attributes" :: NullOrUndefined (MapStringToString)
+  { "attributes" :: Maybe (MapStringToString)
   }
 derive instance newtypeGetSMSAttributesResponse :: Newtype GetSMSAttributesResponse _
 derive instance repGenericGetSMSAttributesResponse :: Generic GetSMSAttributesResponse _
@@ -528,12 +527,12 @@ instance encodeGetSMSAttributesResponse :: Encode GetSMSAttributesResponse where
 
 -- | Constructs GetSMSAttributesResponse from required parameters
 newGetSMSAttributesResponse :: GetSMSAttributesResponse
-newGetSMSAttributesResponse  = GetSMSAttributesResponse { "attributes": (NullOrUndefined Nothing) }
+newGetSMSAttributesResponse  = GetSMSAttributesResponse { "attributes": Nothing }
 
 -- | Constructs GetSMSAttributesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetSMSAttributesResponse' :: ( { "attributes" :: NullOrUndefined (MapStringToString) } -> {"attributes" :: NullOrUndefined (MapStringToString) } ) -> GetSMSAttributesResponse
-newGetSMSAttributesResponse'  customize = (GetSMSAttributesResponse <<< customize) { "attributes": (NullOrUndefined Nothing) }
+newGetSMSAttributesResponse' :: ( { "attributes" :: Maybe (MapStringToString) } -> {"attributes" :: Maybe (MapStringToString) } ) -> GetSMSAttributesResponse
+newGetSMSAttributesResponse'  customize = (GetSMSAttributesResponse <<< customize) { "attributes": Nothing }
 
 
 
@@ -560,7 +559,7 @@ newGetSubscriptionAttributesInput' _SubscriptionArn customize = (GetSubscription
 
 -- | <p>Response for GetSubscriptionAttributes action.</p>
 newtype GetSubscriptionAttributesResponse = GetSubscriptionAttributesResponse 
-  { "Attributes" :: NullOrUndefined (SubscriptionAttributesMap)
+  { "Attributes" :: Maybe (SubscriptionAttributesMap)
   }
 derive instance newtypeGetSubscriptionAttributesResponse :: Newtype GetSubscriptionAttributesResponse _
 derive instance repGenericGetSubscriptionAttributesResponse :: Generic GetSubscriptionAttributesResponse _
@@ -570,12 +569,12 @@ instance encodeGetSubscriptionAttributesResponse :: Encode GetSubscriptionAttrib
 
 -- | Constructs GetSubscriptionAttributesResponse from required parameters
 newGetSubscriptionAttributesResponse :: GetSubscriptionAttributesResponse
-newGetSubscriptionAttributesResponse  = GetSubscriptionAttributesResponse { "Attributes": (NullOrUndefined Nothing) }
+newGetSubscriptionAttributesResponse  = GetSubscriptionAttributesResponse { "Attributes": Nothing }
 
 -- | Constructs GetSubscriptionAttributesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetSubscriptionAttributesResponse' :: ( { "Attributes" :: NullOrUndefined (SubscriptionAttributesMap) } -> {"Attributes" :: NullOrUndefined (SubscriptionAttributesMap) } ) -> GetSubscriptionAttributesResponse
-newGetSubscriptionAttributesResponse'  customize = (GetSubscriptionAttributesResponse <<< customize) { "Attributes": (NullOrUndefined Nothing) }
+newGetSubscriptionAttributesResponse' :: ( { "Attributes" :: Maybe (SubscriptionAttributesMap) } -> {"Attributes" :: Maybe (SubscriptionAttributesMap) } ) -> GetSubscriptionAttributesResponse
+newGetSubscriptionAttributesResponse'  customize = (GetSubscriptionAttributesResponse <<< customize) { "Attributes": Nothing }
 
 
 
@@ -602,7 +601,7 @@ newGetTopicAttributesInput' _TopicArn customize = (GetTopicAttributesInput <<< c
 
 -- | <p>Response for GetTopicAttributes action.</p>
 newtype GetTopicAttributesResponse = GetTopicAttributesResponse 
-  { "Attributes" :: NullOrUndefined (TopicAttributesMap)
+  { "Attributes" :: Maybe (TopicAttributesMap)
   }
 derive instance newtypeGetTopicAttributesResponse :: Newtype GetTopicAttributesResponse _
 derive instance repGenericGetTopicAttributesResponse :: Generic GetTopicAttributesResponse _
@@ -612,18 +611,18 @@ instance encodeGetTopicAttributesResponse :: Encode GetTopicAttributesResponse w
 
 -- | Constructs GetTopicAttributesResponse from required parameters
 newGetTopicAttributesResponse :: GetTopicAttributesResponse
-newGetTopicAttributesResponse  = GetTopicAttributesResponse { "Attributes": (NullOrUndefined Nothing) }
+newGetTopicAttributesResponse  = GetTopicAttributesResponse { "Attributes": Nothing }
 
 -- | Constructs GetTopicAttributesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetTopicAttributesResponse' :: ( { "Attributes" :: NullOrUndefined (TopicAttributesMap) } -> {"Attributes" :: NullOrUndefined (TopicAttributesMap) } ) -> GetTopicAttributesResponse
-newGetTopicAttributesResponse'  customize = (GetTopicAttributesResponse <<< customize) { "Attributes": (NullOrUndefined Nothing) }
+newGetTopicAttributesResponse' :: ( { "Attributes" :: Maybe (TopicAttributesMap) } -> {"Attributes" :: Maybe (TopicAttributesMap) } ) -> GetTopicAttributesResponse
+newGetTopicAttributesResponse'  customize = (GetTopicAttributesResponse <<< customize) { "Attributes": Nothing }
 
 
 
 -- | <p>Indicates an internal service error.</p>
 newtype InternalErrorException = InternalErrorException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeInternalErrorException :: Newtype InternalErrorException _
 derive instance repGenericInternalErrorException :: Generic InternalErrorException _
@@ -633,18 +632,18 @@ instance encodeInternalErrorException :: Encode InternalErrorException where enc
 
 -- | Constructs InternalErrorException from required parameters
 newInternalErrorException :: InternalErrorException
-newInternalErrorException  = InternalErrorException { "message": (NullOrUndefined Nothing) }
+newInternalErrorException  = InternalErrorException { "message": Nothing }
 
 -- | Constructs InternalErrorException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInternalErrorException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> InternalErrorException
-newInternalErrorException'  customize = (InternalErrorException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInternalErrorException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> InternalErrorException
+newInternalErrorException'  customize = (InternalErrorException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>Indicates that a request parameter does not comply with the associated constraints.</p>
 newtype InvalidParameterException = InvalidParameterException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeInvalidParameterException :: Newtype InvalidParameterException _
 derive instance repGenericInvalidParameterException :: Generic InvalidParameterException _
@@ -654,18 +653,18 @@ instance encodeInvalidParameterException :: Encode InvalidParameterException whe
 
 -- | Constructs InvalidParameterException from required parameters
 newInvalidParameterException :: InvalidParameterException
-newInvalidParameterException  = InvalidParameterException { "message": (NullOrUndefined Nothing) }
+newInvalidParameterException  = InvalidParameterException { "message": Nothing }
 
 -- | Constructs InvalidParameterException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidParameterException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> InvalidParameterException
-newInvalidParameterException'  customize = (InvalidParameterException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidParameterException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> InvalidParameterException
+newInvalidParameterException'  customize = (InvalidParameterException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>Indicates that a request parameter does not comply with the associated constraints.</p>
 newtype InvalidParameterValueException = InvalidParameterValueException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeInvalidParameterValueException :: Newtype InvalidParameterValueException _
 derive instance repGenericInvalidParameterValueException :: Generic InvalidParameterValueException _
@@ -675,19 +674,19 @@ instance encodeInvalidParameterValueException :: Encode InvalidParameterValueExc
 
 -- | Constructs InvalidParameterValueException from required parameters
 newInvalidParameterValueException :: InvalidParameterValueException
-newInvalidParameterValueException  = InvalidParameterValueException { "message": (NullOrUndefined Nothing) }
+newInvalidParameterValueException  = InvalidParameterValueException { "message": Nothing }
 
 -- | Constructs InvalidParameterValueException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidParameterValueException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> InvalidParameterValueException
-newInvalidParameterValueException'  customize = (InvalidParameterValueException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidParameterValueException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> InvalidParameterValueException
+newInvalidParameterValueException'  customize = (InvalidParameterValueException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>Input for ListEndpointsByPlatformApplication action.</p>
 newtype ListEndpointsByPlatformApplicationInput = ListEndpointsByPlatformApplicationInput 
   { "PlatformApplicationArn" :: (String)
-  , "NextToken" :: NullOrUndefined (String)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListEndpointsByPlatformApplicationInput :: Newtype ListEndpointsByPlatformApplicationInput _
 derive instance repGenericListEndpointsByPlatformApplicationInput :: Generic ListEndpointsByPlatformApplicationInput _
@@ -697,19 +696,19 @@ instance encodeListEndpointsByPlatformApplicationInput :: Encode ListEndpointsBy
 
 -- | Constructs ListEndpointsByPlatformApplicationInput from required parameters
 newListEndpointsByPlatformApplicationInput :: String -> ListEndpointsByPlatformApplicationInput
-newListEndpointsByPlatformApplicationInput _PlatformApplicationArn = ListEndpointsByPlatformApplicationInput { "PlatformApplicationArn": _PlatformApplicationArn, "NextToken": (NullOrUndefined Nothing) }
+newListEndpointsByPlatformApplicationInput _PlatformApplicationArn = ListEndpointsByPlatformApplicationInput { "PlatformApplicationArn": _PlatformApplicationArn, "NextToken": Nothing }
 
 -- | Constructs ListEndpointsByPlatformApplicationInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListEndpointsByPlatformApplicationInput' :: String -> ( { "PlatformApplicationArn" :: (String) , "NextToken" :: NullOrUndefined (String) } -> {"PlatformApplicationArn" :: (String) , "NextToken" :: NullOrUndefined (String) } ) -> ListEndpointsByPlatformApplicationInput
-newListEndpointsByPlatformApplicationInput' _PlatformApplicationArn customize = (ListEndpointsByPlatformApplicationInput <<< customize) { "PlatformApplicationArn": _PlatformApplicationArn, "NextToken": (NullOrUndefined Nothing) }
+newListEndpointsByPlatformApplicationInput' :: String -> ( { "PlatformApplicationArn" :: (String) , "NextToken" :: Maybe (String) } -> {"PlatformApplicationArn" :: (String) , "NextToken" :: Maybe (String) } ) -> ListEndpointsByPlatformApplicationInput
+newListEndpointsByPlatformApplicationInput' _PlatformApplicationArn customize = (ListEndpointsByPlatformApplicationInput <<< customize) { "PlatformApplicationArn": _PlatformApplicationArn, "NextToken": Nothing }
 
 
 
 -- | <p>Response for ListEndpointsByPlatformApplication action.</p>
 newtype ListEndpointsByPlatformApplicationResponse = ListEndpointsByPlatformApplicationResponse 
-  { "Endpoints" :: NullOrUndefined (ListOfEndpoints)
-  , "NextToken" :: NullOrUndefined (String)
+  { "Endpoints" :: Maybe (ListOfEndpoints)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListEndpointsByPlatformApplicationResponse :: Newtype ListEndpointsByPlatformApplicationResponse _
 derive instance repGenericListEndpointsByPlatformApplicationResponse :: Generic ListEndpointsByPlatformApplicationResponse _
@@ -719,12 +718,12 @@ instance encodeListEndpointsByPlatformApplicationResponse :: Encode ListEndpoint
 
 -- | Constructs ListEndpointsByPlatformApplicationResponse from required parameters
 newListEndpointsByPlatformApplicationResponse :: ListEndpointsByPlatformApplicationResponse
-newListEndpointsByPlatformApplicationResponse  = ListEndpointsByPlatformApplicationResponse { "Endpoints": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListEndpointsByPlatformApplicationResponse  = ListEndpointsByPlatformApplicationResponse { "Endpoints": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListEndpointsByPlatformApplicationResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListEndpointsByPlatformApplicationResponse' :: ( { "Endpoints" :: NullOrUndefined (ListOfEndpoints) , "NextToken" :: NullOrUndefined (String) } -> {"Endpoints" :: NullOrUndefined (ListOfEndpoints) , "NextToken" :: NullOrUndefined (String) } ) -> ListEndpointsByPlatformApplicationResponse
-newListEndpointsByPlatformApplicationResponse'  customize = (ListEndpointsByPlatformApplicationResponse <<< customize) { "Endpoints": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListEndpointsByPlatformApplicationResponse' :: ( { "Endpoints" :: Maybe (ListOfEndpoints) , "NextToken" :: Maybe (String) } -> {"Endpoints" :: Maybe (ListOfEndpoints) , "NextToken" :: Maybe (String) } ) -> ListEndpointsByPlatformApplicationResponse
+newListEndpointsByPlatformApplicationResponse'  customize = (ListEndpointsByPlatformApplicationResponse <<< customize) { "Endpoints": Nothing, "NextToken": Nothing }
 
 
 
@@ -748,7 +747,7 @@ instance encodeListOfPlatformApplications :: Encode ListOfPlatformApplications w
 
 -- | <p>The input for the <code>ListPhoneNumbersOptedOut</code> action.</p>
 newtype ListPhoneNumbersOptedOutInput = ListPhoneNumbersOptedOutInput 
-  { "nextToken" :: NullOrUndefined (String)
+  { "nextToken" :: Maybe (String)
   }
 derive instance newtypeListPhoneNumbersOptedOutInput :: Newtype ListPhoneNumbersOptedOutInput _
 derive instance repGenericListPhoneNumbersOptedOutInput :: Generic ListPhoneNumbersOptedOutInput _
@@ -758,19 +757,19 @@ instance encodeListPhoneNumbersOptedOutInput :: Encode ListPhoneNumbersOptedOutI
 
 -- | Constructs ListPhoneNumbersOptedOutInput from required parameters
 newListPhoneNumbersOptedOutInput :: ListPhoneNumbersOptedOutInput
-newListPhoneNumbersOptedOutInput  = ListPhoneNumbersOptedOutInput { "nextToken": (NullOrUndefined Nothing) }
+newListPhoneNumbersOptedOutInput  = ListPhoneNumbersOptedOutInput { "nextToken": Nothing }
 
 -- | Constructs ListPhoneNumbersOptedOutInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListPhoneNumbersOptedOutInput' :: ( { "nextToken" :: NullOrUndefined (String) } -> {"nextToken" :: NullOrUndefined (String) } ) -> ListPhoneNumbersOptedOutInput
-newListPhoneNumbersOptedOutInput'  customize = (ListPhoneNumbersOptedOutInput <<< customize) { "nextToken": (NullOrUndefined Nothing) }
+newListPhoneNumbersOptedOutInput' :: ( { "nextToken" :: Maybe (String) } -> {"nextToken" :: Maybe (String) } ) -> ListPhoneNumbersOptedOutInput
+newListPhoneNumbersOptedOutInput'  customize = (ListPhoneNumbersOptedOutInput <<< customize) { "nextToken": Nothing }
 
 
 
 -- | <p>The response from the <code>ListPhoneNumbersOptedOut</code> action.</p>
 newtype ListPhoneNumbersOptedOutResponse = ListPhoneNumbersOptedOutResponse 
-  { "phoneNumbers" :: NullOrUndefined (PhoneNumberList)
-  , "nextToken" :: NullOrUndefined (String)
+  { "phoneNumbers" :: Maybe (PhoneNumberList)
+  , "nextToken" :: Maybe (String)
   }
 derive instance newtypeListPhoneNumbersOptedOutResponse :: Newtype ListPhoneNumbersOptedOutResponse _
 derive instance repGenericListPhoneNumbersOptedOutResponse :: Generic ListPhoneNumbersOptedOutResponse _
@@ -780,18 +779,18 @@ instance encodeListPhoneNumbersOptedOutResponse :: Encode ListPhoneNumbersOptedO
 
 -- | Constructs ListPhoneNumbersOptedOutResponse from required parameters
 newListPhoneNumbersOptedOutResponse :: ListPhoneNumbersOptedOutResponse
-newListPhoneNumbersOptedOutResponse  = ListPhoneNumbersOptedOutResponse { "nextToken": (NullOrUndefined Nothing), "phoneNumbers": (NullOrUndefined Nothing) }
+newListPhoneNumbersOptedOutResponse  = ListPhoneNumbersOptedOutResponse { "nextToken": Nothing, "phoneNumbers": Nothing }
 
 -- | Constructs ListPhoneNumbersOptedOutResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListPhoneNumbersOptedOutResponse' :: ( { "phoneNumbers" :: NullOrUndefined (PhoneNumberList) , "nextToken" :: NullOrUndefined (String) } -> {"phoneNumbers" :: NullOrUndefined (PhoneNumberList) , "nextToken" :: NullOrUndefined (String) } ) -> ListPhoneNumbersOptedOutResponse
-newListPhoneNumbersOptedOutResponse'  customize = (ListPhoneNumbersOptedOutResponse <<< customize) { "nextToken": (NullOrUndefined Nothing), "phoneNumbers": (NullOrUndefined Nothing) }
+newListPhoneNumbersOptedOutResponse' :: ( { "phoneNumbers" :: Maybe (PhoneNumberList) , "nextToken" :: Maybe (String) } -> {"phoneNumbers" :: Maybe (PhoneNumberList) , "nextToken" :: Maybe (String) } ) -> ListPhoneNumbersOptedOutResponse
+newListPhoneNumbersOptedOutResponse'  customize = (ListPhoneNumbersOptedOutResponse <<< customize) { "nextToken": Nothing, "phoneNumbers": Nothing }
 
 
 
 -- | <p>Input for ListPlatformApplications action.</p>
 newtype ListPlatformApplicationsInput = ListPlatformApplicationsInput 
-  { "NextToken" :: NullOrUndefined (String)
+  { "NextToken" :: Maybe (String)
   }
 derive instance newtypeListPlatformApplicationsInput :: Newtype ListPlatformApplicationsInput _
 derive instance repGenericListPlatformApplicationsInput :: Generic ListPlatformApplicationsInput _
@@ -801,19 +800,19 @@ instance encodeListPlatformApplicationsInput :: Encode ListPlatformApplicationsI
 
 -- | Constructs ListPlatformApplicationsInput from required parameters
 newListPlatformApplicationsInput :: ListPlatformApplicationsInput
-newListPlatformApplicationsInput  = ListPlatformApplicationsInput { "NextToken": (NullOrUndefined Nothing) }
+newListPlatformApplicationsInput  = ListPlatformApplicationsInput { "NextToken": Nothing }
 
 -- | Constructs ListPlatformApplicationsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListPlatformApplicationsInput' :: ( { "NextToken" :: NullOrUndefined (String) } -> {"NextToken" :: NullOrUndefined (String) } ) -> ListPlatformApplicationsInput
-newListPlatformApplicationsInput'  customize = (ListPlatformApplicationsInput <<< customize) { "NextToken": (NullOrUndefined Nothing) }
+newListPlatformApplicationsInput' :: ( { "NextToken" :: Maybe (String) } -> {"NextToken" :: Maybe (String) } ) -> ListPlatformApplicationsInput
+newListPlatformApplicationsInput'  customize = (ListPlatformApplicationsInput <<< customize) { "NextToken": Nothing }
 
 
 
 -- | <p>Response for ListPlatformApplications action.</p>
 newtype ListPlatformApplicationsResponse = ListPlatformApplicationsResponse 
-  { "PlatformApplications" :: NullOrUndefined (ListOfPlatformApplications)
-  , "NextToken" :: NullOrUndefined (String)
+  { "PlatformApplications" :: Maybe (ListOfPlatformApplications)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListPlatformApplicationsResponse :: Newtype ListPlatformApplicationsResponse _
 derive instance repGenericListPlatformApplicationsResponse :: Generic ListPlatformApplicationsResponse _
@@ -823,12 +822,12 @@ instance encodeListPlatformApplicationsResponse :: Encode ListPlatformApplicatio
 
 -- | Constructs ListPlatformApplicationsResponse from required parameters
 newListPlatformApplicationsResponse :: ListPlatformApplicationsResponse
-newListPlatformApplicationsResponse  = ListPlatformApplicationsResponse { "NextToken": (NullOrUndefined Nothing), "PlatformApplications": (NullOrUndefined Nothing) }
+newListPlatformApplicationsResponse  = ListPlatformApplicationsResponse { "NextToken": Nothing, "PlatformApplications": Nothing }
 
 -- | Constructs ListPlatformApplicationsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListPlatformApplicationsResponse' :: ( { "PlatformApplications" :: NullOrUndefined (ListOfPlatformApplications) , "NextToken" :: NullOrUndefined (String) } -> {"PlatformApplications" :: NullOrUndefined (ListOfPlatformApplications) , "NextToken" :: NullOrUndefined (String) } ) -> ListPlatformApplicationsResponse
-newListPlatformApplicationsResponse'  customize = (ListPlatformApplicationsResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "PlatformApplications": (NullOrUndefined Nothing) }
+newListPlatformApplicationsResponse' :: ( { "PlatformApplications" :: Maybe (ListOfPlatformApplications) , "NextToken" :: Maybe (String) } -> {"PlatformApplications" :: Maybe (ListOfPlatformApplications) , "NextToken" :: Maybe (String) } ) -> ListPlatformApplicationsResponse
+newListPlatformApplicationsResponse'  customize = (ListPlatformApplicationsResponse <<< customize) { "NextToken": Nothing, "PlatformApplications": Nothing }
 
 
 
@@ -844,7 +843,7 @@ instance encodeListString :: Encode ListString where encode = genericEncode opti
 -- | <p>Input for ListSubscriptionsByTopic action.</p>
 newtype ListSubscriptionsByTopicInput = ListSubscriptionsByTopicInput 
   { "TopicArn" :: (TopicARN')
-  , "NextToken" :: NullOrUndefined (NextToken')
+  , "NextToken" :: Maybe (NextToken')
   }
 derive instance newtypeListSubscriptionsByTopicInput :: Newtype ListSubscriptionsByTopicInput _
 derive instance repGenericListSubscriptionsByTopicInput :: Generic ListSubscriptionsByTopicInput _
@@ -854,19 +853,19 @@ instance encodeListSubscriptionsByTopicInput :: Encode ListSubscriptionsByTopicI
 
 -- | Constructs ListSubscriptionsByTopicInput from required parameters
 newListSubscriptionsByTopicInput :: TopicARN' -> ListSubscriptionsByTopicInput
-newListSubscriptionsByTopicInput _TopicArn = ListSubscriptionsByTopicInput { "TopicArn": _TopicArn, "NextToken": (NullOrUndefined Nothing) }
+newListSubscriptionsByTopicInput _TopicArn = ListSubscriptionsByTopicInput { "TopicArn": _TopicArn, "NextToken": Nothing }
 
 -- | Constructs ListSubscriptionsByTopicInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListSubscriptionsByTopicInput' :: TopicARN' -> ( { "TopicArn" :: (TopicARN') , "NextToken" :: NullOrUndefined (NextToken') } -> {"TopicArn" :: (TopicARN') , "NextToken" :: NullOrUndefined (NextToken') } ) -> ListSubscriptionsByTopicInput
-newListSubscriptionsByTopicInput' _TopicArn customize = (ListSubscriptionsByTopicInput <<< customize) { "TopicArn": _TopicArn, "NextToken": (NullOrUndefined Nothing) }
+newListSubscriptionsByTopicInput' :: TopicARN' -> ( { "TopicArn" :: (TopicARN') , "NextToken" :: Maybe (NextToken') } -> {"TopicArn" :: (TopicARN') , "NextToken" :: Maybe (NextToken') } ) -> ListSubscriptionsByTopicInput
+newListSubscriptionsByTopicInput' _TopicArn customize = (ListSubscriptionsByTopicInput <<< customize) { "TopicArn": _TopicArn, "NextToken": Nothing }
 
 
 
 -- | <p>Response for ListSubscriptionsByTopic action.</p>
 newtype ListSubscriptionsByTopicResponse = ListSubscriptionsByTopicResponse 
-  { "Subscriptions" :: NullOrUndefined (SubscriptionsList)
-  , "NextToken" :: NullOrUndefined (NextToken')
+  { "Subscriptions" :: Maybe (SubscriptionsList)
+  , "NextToken" :: Maybe (NextToken')
   }
 derive instance newtypeListSubscriptionsByTopicResponse :: Newtype ListSubscriptionsByTopicResponse _
 derive instance repGenericListSubscriptionsByTopicResponse :: Generic ListSubscriptionsByTopicResponse _
@@ -876,18 +875,18 @@ instance encodeListSubscriptionsByTopicResponse :: Encode ListSubscriptionsByTop
 
 -- | Constructs ListSubscriptionsByTopicResponse from required parameters
 newListSubscriptionsByTopicResponse :: ListSubscriptionsByTopicResponse
-newListSubscriptionsByTopicResponse  = ListSubscriptionsByTopicResponse { "NextToken": (NullOrUndefined Nothing), "Subscriptions": (NullOrUndefined Nothing) }
+newListSubscriptionsByTopicResponse  = ListSubscriptionsByTopicResponse { "NextToken": Nothing, "Subscriptions": Nothing }
 
 -- | Constructs ListSubscriptionsByTopicResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListSubscriptionsByTopicResponse' :: ( { "Subscriptions" :: NullOrUndefined (SubscriptionsList) , "NextToken" :: NullOrUndefined (NextToken') } -> {"Subscriptions" :: NullOrUndefined (SubscriptionsList) , "NextToken" :: NullOrUndefined (NextToken') } ) -> ListSubscriptionsByTopicResponse
-newListSubscriptionsByTopicResponse'  customize = (ListSubscriptionsByTopicResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "Subscriptions": (NullOrUndefined Nothing) }
+newListSubscriptionsByTopicResponse' :: ( { "Subscriptions" :: Maybe (SubscriptionsList) , "NextToken" :: Maybe (NextToken') } -> {"Subscriptions" :: Maybe (SubscriptionsList) , "NextToken" :: Maybe (NextToken') } ) -> ListSubscriptionsByTopicResponse
+newListSubscriptionsByTopicResponse'  customize = (ListSubscriptionsByTopicResponse <<< customize) { "NextToken": Nothing, "Subscriptions": Nothing }
 
 
 
 -- | <p>Input for ListSubscriptions action.</p>
 newtype ListSubscriptionsInput = ListSubscriptionsInput 
-  { "NextToken" :: NullOrUndefined (NextToken')
+  { "NextToken" :: Maybe (NextToken')
   }
 derive instance newtypeListSubscriptionsInput :: Newtype ListSubscriptionsInput _
 derive instance repGenericListSubscriptionsInput :: Generic ListSubscriptionsInput _
@@ -897,19 +896,19 @@ instance encodeListSubscriptionsInput :: Encode ListSubscriptionsInput where enc
 
 -- | Constructs ListSubscriptionsInput from required parameters
 newListSubscriptionsInput :: ListSubscriptionsInput
-newListSubscriptionsInput  = ListSubscriptionsInput { "NextToken": (NullOrUndefined Nothing) }
+newListSubscriptionsInput  = ListSubscriptionsInput { "NextToken": Nothing }
 
 -- | Constructs ListSubscriptionsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListSubscriptionsInput' :: ( { "NextToken" :: NullOrUndefined (NextToken') } -> {"NextToken" :: NullOrUndefined (NextToken') } ) -> ListSubscriptionsInput
-newListSubscriptionsInput'  customize = (ListSubscriptionsInput <<< customize) { "NextToken": (NullOrUndefined Nothing) }
+newListSubscriptionsInput' :: ( { "NextToken" :: Maybe (NextToken') } -> {"NextToken" :: Maybe (NextToken') } ) -> ListSubscriptionsInput
+newListSubscriptionsInput'  customize = (ListSubscriptionsInput <<< customize) { "NextToken": Nothing }
 
 
 
 -- | <p>Response for ListSubscriptions action</p>
 newtype ListSubscriptionsResponse = ListSubscriptionsResponse 
-  { "Subscriptions" :: NullOrUndefined (SubscriptionsList)
-  , "NextToken" :: NullOrUndefined (NextToken')
+  { "Subscriptions" :: Maybe (SubscriptionsList)
+  , "NextToken" :: Maybe (NextToken')
   }
 derive instance newtypeListSubscriptionsResponse :: Newtype ListSubscriptionsResponse _
 derive instance repGenericListSubscriptionsResponse :: Generic ListSubscriptionsResponse _
@@ -919,17 +918,17 @@ instance encodeListSubscriptionsResponse :: Encode ListSubscriptionsResponse whe
 
 -- | Constructs ListSubscriptionsResponse from required parameters
 newListSubscriptionsResponse :: ListSubscriptionsResponse
-newListSubscriptionsResponse  = ListSubscriptionsResponse { "NextToken": (NullOrUndefined Nothing), "Subscriptions": (NullOrUndefined Nothing) }
+newListSubscriptionsResponse  = ListSubscriptionsResponse { "NextToken": Nothing, "Subscriptions": Nothing }
 
 -- | Constructs ListSubscriptionsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListSubscriptionsResponse' :: ( { "Subscriptions" :: NullOrUndefined (SubscriptionsList) , "NextToken" :: NullOrUndefined (NextToken') } -> {"Subscriptions" :: NullOrUndefined (SubscriptionsList) , "NextToken" :: NullOrUndefined (NextToken') } ) -> ListSubscriptionsResponse
-newListSubscriptionsResponse'  customize = (ListSubscriptionsResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "Subscriptions": (NullOrUndefined Nothing) }
+newListSubscriptionsResponse' :: ( { "Subscriptions" :: Maybe (SubscriptionsList) , "NextToken" :: Maybe (NextToken') } -> {"Subscriptions" :: Maybe (SubscriptionsList) , "NextToken" :: Maybe (NextToken') } ) -> ListSubscriptionsResponse
+newListSubscriptionsResponse'  customize = (ListSubscriptionsResponse <<< customize) { "NextToken": Nothing, "Subscriptions": Nothing }
 
 
 
 newtype ListTopicsInput = ListTopicsInput 
-  { "NextToken" :: NullOrUndefined (NextToken')
+  { "NextToken" :: Maybe (NextToken')
   }
 derive instance newtypeListTopicsInput :: Newtype ListTopicsInput _
 derive instance repGenericListTopicsInput :: Generic ListTopicsInput _
@@ -939,19 +938,19 @@ instance encodeListTopicsInput :: Encode ListTopicsInput where encode = genericE
 
 -- | Constructs ListTopicsInput from required parameters
 newListTopicsInput :: ListTopicsInput
-newListTopicsInput  = ListTopicsInput { "NextToken": (NullOrUndefined Nothing) }
+newListTopicsInput  = ListTopicsInput { "NextToken": Nothing }
 
 -- | Constructs ListTopicsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListTopicsInput' :: ( { "NextToken" :: NullOrUndefined (NextToken') } -> {"NextToken" :: NullOrUndefined (NextToken') } ) -> ListTopicsInput
-newListTopicsInput'  customize = (ListTopicsInput <<< customize) { "NextToken": (NullOrUndefined Nothing) }
+newListTopicsInput' :: ( { "NextToken" :: Maybe (NextToken') } -> {"NextToken" :: Maybe (NextToken') } ) -> ListTopicsInput
+newListTopicsInput'  customize = (ListTopicsInput <<< customize) { "NextToken": Nothing }
 
 
 
 -- | <p>Response for ListTopics action.</p>
 newtype ListTopicsResponse = ListTopicsResponse 
-  { "Topics" :: NullOrUndefined (TopicsList)
-  , "NextToken" :: NullOrUndefined (NextToken')
+  { "Topics" :: Maybe (TopicsList)
+  , "NextToken" :: Maybe (NextToken')
   }
 derive instance newtypeListTopicsResponse :: Newtype ListTopicsResponse _
 derive instance repGenericListTopicsResponse :: Generic ListTopicsResponse _
@@ -961,12 +960,12 @@ instance encodeListTopicsResponse :: Encode ListTopicsResponse where encode = ge
 
 -- | Constructs ListTopicsResponse from required parameters
 newListTopicsResponse :: ListTopicsResponse
-newListTopicsResponse  = ListTopicsResponse { "NextToken": (NullOrUndefined Nothing), "Topics": (NullOrUndefined Nothing) }
+newListTopicsResponse  = ListTopicsResponse { "NextToken": Nothing, "Topics": Nothing }
 
 -- | Constructs ListTopicsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListTopicsResponse' :: ( { "Topics" :: NullOrUndefined (TopicsList) , "NextToken" :: NullOrUndefined (NextToken') } -> {"Topics" :: NullOrUndefined (TopicsList) , "NextToken" :: NullOrUndefined (NextToken') } ) -> ListTopicsResponse
-newListTopicsResponse'  customize = (ListTopicsResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "Topics": (NullOrUndefined Nothing) }
+newListTopicsResponse' :: ( { "Topics" :: Maybe (TopicsList) , "NextToken" :: Maybe (NextToken') } -> {"Topics" :: Maybe (TopicsList) , "NextToken" :: Maybe (NextToken') } ) -> ListTopicsResponse
+newListTopicsResponse'  customize = (ListTopicsResponse <<< customize) { "NextToken": Nothing, "Topics": Nothing }
 
 
 
@@ -991,8 +990,8 @@ instance encodeMessageAttributeMap :: Encode MessageAttributeMap where encode = 
 -- | <p>The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>.</p> <p>Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html">Using Amazon SNS Message Attributes</a>.</p>
 newtype MessageAttributeValue = MessageAttributeValue 
   { "DataType" :: (String)
-  , "StringValue" :: NullOrUndefined (String)
-  , "BinaryValue" :: NullOrUndefined (Binary)
+  , "StringValue" :: Maybe (String)
+  , "BinaryValue" :: Maybe (Binary)
   }
 derive instance newtypeMessageAttributeValue :: Newtype MessageAttributeValue _
 derive instance repGenericMessageAttributeValue :: Generic MessageAttributeValue _
@@ -1002,18 +1001,18 @@ instance encodeMessageAttributeValue :: Encode MessageAttributeValue where encod
 
 -- | Constructs MessageAttributeValue from required parameters
 newMessageAttributeValue :: String -> MessageAttributeValue
-newMessageAttributeValue _DataType = MessageAttributeValue { "DataType": _DataType, "BinaryValue": (NullOrUndefined Nothing), "StringValue": (NullOrUndefined Nothing) }
+newMessageAttributeValue _DataType = MessageAttributeValue { "DataType": _DataType, "BinaryValue": Nothing, "StringValue": Nothing }
 
 -- | Constructs MessageAttributeValue's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMessageAttributeValue' :: String -> ( { "DataType" :: (String) , "StringValue" :: NullOrUndefined (String) , "BinaryValue" :: NullOrUndefined (Binary) } -> {"DataType" :: (String) , "StringValue" :: NullOrUndefined (String) , "BinaryValue" :: NullOrUndefined (Binary) } ) -> MessageAttributeValue
-newMessageAttributeValue' _DataType customize = (MessageAttributeValue <<< customize) { "DataType": _DataType, "BinaryValue": (NullOrUndefined Nothing), "StringValue": (NullOrUndefined Nothing) }
+newMessageAttributeValue' :: String -> ( { "DataType" :: (String) , "StringValue" :: Maybe (String) , "BinaryValue" :: Maybe (Binary) } -> {"DataType" :: (String) , "StringValue" :: Maybe (String) , "BinaryValue" :: Maybe (Binary) } ) -> MessageAttributeValue
+newMessageAttributeValue' _DataType customize = (MessageAttributeValue <<< customize) { "DataType": _DataType, "BinaryValue": Nothing, "StringValue": Nothing }
 
 
 
 -- | <p>Indicates that the requested resource does not exist.</p>
 newtype NotFoundException = NotFoundException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeNotFoundException :: Newtype NotFoundException _
 derive instance repGenericNotFoundException :: Generic NotFoundException _
@@ -1023,12 +1022,12 @@ instance encodeNotFoundException :: Encode NotFoundException where encode = gene
 
 -- | Constructs NotFoundException from required parameters
 newNotFoundException :: NotFoundException
-newNotFoundException  = NotFoundException { "message": (NullOrUndefined Nothing) }
+newNotFoundException  = NotFoundException { "message": Nothing }
 
 -- | Constructs NotFoundException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNotFoundException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> NotFoundException
-newNotFoundException'  customize = (NotFoundException <<< customize) { "message": (NullOrUndefined Nothing) }
+newNotFoundException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> NotFoundException
+newNotFoundException'  customize = (NotFoundException <<< customize) { "message": Nothing }
 
 
 
@@ -1083,8 +1082,8 @@ instance encodePhoneNumberList :: Encode PhoneNumberList where encode = genericE
 
 -- | <p>Platform application object.</p>
 newtype PlatformApplication = PlatformApplication 
-  { "PlatformApplicationArn" :: NullOrUndefined (String)
-  , "Attributes" :: NullOrUndefined (MapStringToString)
+  { "PlatformApplicationArn" :: Maybe (String)
+  , "Attributes" :: Maybe (MapStringToString)
   }
 derive instance newtypePlatformApplication :: Newtype PlatformApplication _
 derive instance repGenericPlatformApplication :: Generic PlatformApplication _
@@ -1094,18 +1093,18 @@ instance encodePlatformApplication :: Encode PlatformApplication where encode = 
 
 -- | Constructs PlatformApplication from required parameters
 newPlatformApplication :: PlatformApplication
-newPlatformApplication  = PlatformApplication { "Attributes": (NullOrUndefined Nothing), "PlatformApplicationArn": (NullOrUndefined Nothing) }
+newPlatformApplication  = PlatformApplication { "Attributes": Nothing, "PlatformApplicationArn": Nothing }
 
 -- | Constructs PlatformApplication's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPlatformApplication' :: ( { "PlatformApplicationArn" :: NullOrUndefined (String) , "Attributes" :: NullOrUndefined (MapStringToString) } -> {"PlatformApplicationArn" :: NullOrUndefined (String) , "Attributes" :: NullOrUndefined (MapStringToString) } ) -> PlatformApplication
-newPlatformApplication'  customize = (PlatformApplication <<< customize) { "Attributes": (NullOrUndefined Nothing), "PlatformApplicationArn": (NullOrUndefined Nothing) }
+newPlatformApplication' :: ( { "PlatformApplicationArn" :: Maybe (String) , "Attributes" :: Maybe (MapStringToString) } -> {"PlatformApplicationArn" :: Maybe (String) , "Attributes" :: Maybe (MapStringToString) } ) -> PlatformApplication
+newPlatformApplication'  customize = (PlatformApplication <<< customize) { "Attributes": Nothing, "PlatformApplicationArn": Nothing }
 
 
 
 -- | <p>Exception error indicating platform application disabled.</p>
 newtype PlatformApplicationDisabledException = PlatformApplicationDisabledException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypePlatformApplicationDisabledException :: Newtype PlatformApplicationDisabledException _
 derive instance repGenericPlatformApplicationDisabledException :: Generic PlatformApplicationDisabledException _
@@ -1115,24 +1114,24 @@ instance encodePlatformApplicationDisabledException :: Encode PlatformApplicatio
 
 -- | Constructs PlatformApplicationDisabledException from required parameters
 newPlatformApplicationDisabledException :: PlatformApplicationDisabledException
-newPlatformApplicationDisabledException  = PlatformApplicationDisabledException { "message": (NullOrUndefined Nothing) }
+newPlatformApplicationDisabledException  = PlatformApplicationDisabledException { "message": Nothing }
 
 -- | Constructs PlatformApplicationDisabledException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPlatformApplicationDisabledException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> PlatformApplicationDisabledException
-newPlatformApplicationDisabledException'  customize = (PlatformApplicationDisabledException <<< customize) { "message": (NullOrUndefined Nothing) }
+newPlatformApplicationDisabledException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> PlatformApplicationDisabledException
+newPlatformApplicationDisabledException'  customize = (PlatformApplicationDisabledException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>Input for Publish action.</p>
 newtype PublishInput = PublishInput 
-  { "TopicArn" :: NullOrUndefined (TopicARN')
-  , "TargetArn" :: NullOrUndefined (String)
-  , "PhoneNumber" :: NullOrUndefined (String)
+  { "TopicArn" :: Maybe (TopicARN')
+  , "TargetArn" :: Maybe (String)
+  , "PhoneNumber" :: Maybe (String)
   , "Message" :: (Message')
-  , "Subject" :: NullOrUndefined (Subject')
-  , "MessageStructure" :: NullOrUndefined (MessageStructure')
-  , "MessageAttributes" :: NullOrUndefined (MessageAttributeMap)
+  , "Subject" :: Maybe (Subject')
+  , "MessageStructure" :: Maybe (MessageStructure')
+  , "MessageAttributes" :: Maybe (MessageAttributeMap)
   }
 derive instance newtypePublishInput :: Newtype PublishInput _
 derive instance repGenericPublishInput :: Generic PublishInput _
@@ -1142,18 +1141,18 @@ instance encodePublishInput :: Encode PublishInput where encode = genericEncode 
 
 -- | Constructs PublishInput from required parameters
 newPublishInput :: Message' -> PublishInput
-newPublishInput _Message = PublishInput { "Message": _Message, "MessageAttributes": (NullOrUndefined Nothing), "MessageStructure": (NullOrUndefined Nothing), "PhoneNumber": (NullOrUndefined Nothing), "Subject": (NullOrUndefined Nothing), "TargetArn": (NullOrUndefined Nothing), "TopicArn": (NullOrUndefined Nothing) }
+newPublishInput _Message = PublishInput { "Message": _Message, "MessageAttributes": Nothing, "MessageStructure": Nothing, "PhoneNumber": Nothing, "Subject": Nothing, "TargetArn": Nothing, "TopicArn": Nothing }
 
 -- | Constructs PublishInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPublishInput' :: Message' -> ( { "TopicArn" :: NullOrUndefined (TopicARN') , "TargetArn" :: NullOrUndefined (String) , "PhoneNumber" :: NullOrUndefined (String) , "Message" :: (Message') , "Subject" :: NullOrUndefined (Subject') , "MessageStructure" :: NullOrUndefined (MessageStructure') , "MessageAttributes" :: NullOrUndefined (MessageAttributeMap) } -> {"TopicArn" :: NullOrUndefined (TopicARN') , "TargetArn" :: NullOrUndefined (String) , "PhoneNumber" :: NullOrUndefined (String) , "Message" :: (Message') , "Subject" :: NullOrUndefined (Subject') , "MessageStructure" :: NullOrUndefined (MessageStructure') , "MessageAttributes" :: NullOrUndefined (MessageAttributeMap) } ) -> PublishInput
-newPublishInput' _Message customize = (PublishInput <<< customize) { "Message": _Message, "MessageAttributes": (NullOrUndefined Nothing), "MessageStructure": (NullOrUndefined Nothing), "PhoneNumber": (NullOrUndefined Nothing), "Subject": (NullOrUndefined Nothing), "TargetArn": (NullOrUndefined Nothing), "TopicArn": (NullOrUndefined Nothing) }
+newPublishInput' :: Message' -> ( { "TopicArn" :: Maybe (TopicARN') , "TargetArn" :: Maybe (String) , "PhoneNumber" :: Maybe (String) , "Message" :: (Message') , "Subject" :: Maybe (Subject') , "MessageStructure" :: Maybe (MessageStructure') , "MessageAttributes" :: Maybe (MessageAttributeMap) } -> {"TopicArn" :: Maybe (TopicARN') , "TargetArn" :: Maybe (String) , "PhoneNumber" :: Maybe (String) , "Message" :: (Message') , "Subject" :: Maybe (Subject') , "MessageStructure" :: Maybe (MessageStructure') , "MessageAttributes" :: Maybe (MessageAttributeMap) } ) -> PublishInput
+newPublishInput' _Message customize = (PublishInput <<< customize) { "Message": _Message, "MessageAttributes": Nothing, "MessageStructure": Nothing, "PhoneNumber": Nothing, "Subject": Nothing, "TargetArn": Nothing, "TopicArn": Nothing }
 
 
 
 -- | <p>Response for Publish action.</p>
 newtype PublishResponse = PublishResponse 
-  { "MessageId" :: NullOrUndefined (MessageId')
+  { "MessageId" :: Maybe (MessageId')
   }
 derive instance newtypePublishResponse :: Newtype PublishResponse _
 derive instance repGenericPublishResponse :: Generic PublishResponse _
@@ -1163,12 +1162,12 @@ instance encodePublishResponse :: Encode PublishResponse where encode = genericE
 
 -- | Constructs PublishResponse from required parameters
 newPublishResponse :: PublishResponse
-newPublishResponse  = PublishResponse { "MessageId": (NullOrUndefined Nothing) }
+newPublishResponse  = PublishResponse { "MessageId": Nothing }
 
 -- | Constructs PublishResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPublishResponse' :: ( { "MessageId" :: NullOrUndefined (MessageId') } -> {"MessageId" :: NullOrUndefined (MessageId') } ) -> PublishResponse
-newPublishResponse'  customize = (PublishResponse <<< customize) { "MessageId": (NullOrUndefined Nothing) }
+newPublishResponse' :: ( { "MessageId" :: Maybe (MessageId') } -> {"MessageId" :: Maybe (MessageId') } ) -> PublishResponse
+newPublishResponse'  customize = (PublishResponse <<< customize) { "MessageId": Nothing }
 
 
 
@@ -1273,7 +1272,7 @@ instance encodeSetSMSAttributesResponse :: Encode SetSMSAttributesResponse where
 newtype SetSubscriptionAttributesInput = SetSubscriptionAttributesInput 
   { "SubscriptionArn" :: (SubscriptionARN')
   , "AttributeName" :: (AttributeName')
-  , "AttributeValue" :: NullOrUndefined (AttributeValue')
+  , "AttributeValue" :: Maybe (AttributeValue')
   }
 derive instance newtypeSetSubscriptionAttributesInput :: Newtype SetSubscriptionAttributesInput _
 derive instance repGenericSetSubscriptionAttributesInput :: Generic SetSubscriptionAttributesInput _
@@ -1283,12 +1282,12 @@ instance encodeSetSubscriptionAttributesInput :: Encode SetSubscriptionAttribute
 
 -- | Constructs SetSubscriptionAttributesInput from required parameters
 newSetSubscriptionAttributesInput :: AttributeName' -> SubscriptionARN' -> SetSubscriptionAttributesInput
-newSetSubscriptionAttributesInput _AttributeName _SubscriptionArn = SetSubscriptionAttributesInput { "AttributeName": _AttributeName, "SubscriptionArn": _SubscriptionArn, "AttributeValue": (NullOrUndefined Nothing) }
+newSetSubscriptionAttributesInput _AttributeName _SubscriptionArn = SetSubscriptionAttributesInput { "AttributeName": _AttributeName, "SubscriptionArn": _SubscriptionArn, "AttributeValue": Nothing }
 
 -- | Constructs SetSubscriptionAttributesInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSetSubscriptionAttributesInput' :: AttributeName' -> SubscriptionARN' -> ( { "SubscriptionArn" :: (SubscriptionARN') , "AttributeName" :: (AttributeName') , "AttributeValue" :: NullOrUndefined (AttributeValue') } -> {"SubscriptionArn" :: (SubscriptionARN') , "AttributeName" :: (AttributeName') , "AttributeValue" :: NullOrUndefined (AttributeValue') } ) -> SetSubscriptionAttributesInput
-newSetSubscriptionAttributesInput' _AttributeName _SubscriptionArn customize = (SetSubscriptionAttributesInput <<< customize) { "AttributeName": _AttributeName, "SubscriptionArn": _SubscriptionArn, "AttributeValue": (NullOrUndefined Nothing) }
+newSetSubscriptionAttributesInput' :: AttributeName' -> SubscriptionARN' -> ( { "SubscriptionArn" :: (SubscriptionARN') , "AttributeName" :: (AttributeName') , "AttributeValue" :: Maybe (AttributeValue') } -> {"SubscriptionArn" :: (SubscriptionARN') , "AttributeName" :: (AttributeName') , "AttributeValue" :: Maybe (AttributeValue') } ) -> SetSubscriptionAttributesInput
+newSetSubscriptionAttributesInput' _AttributeName _SubscriptionArn customize = (SetSubscriptionAttributesInput <<< customize) { "AttributeName": _AttributeName, "SubscriptionArn": _SubscriptionArn, "AttributeValue": Nothing }
 
 
 
@@ -1296,7 +1295,7 @@ newSetSubscriptionAttributesInput' _AttributeName _SubscriptionArn customize = (
 newtype SetTopicAttributesInput = SetTopicAttributesInput 
   { "TopicArn" :: (TopicARN')
   , "AttributeName" :: (AttributeName')
-  , "AttributeValue" :: NullOrUndefined (AttributeValue')
+  , "AttributeValue" :: Maybe (AttributeValue')
   }
 derive instance newtypeSetTopicAttributesInput :: Newtype SetTopicAttributesInput _
 derive instance repGenericSetTopicAttributesInput :: Generic SetTopicAttributesInput _
@@ -1306,12 +1305,12 @@ instance encodeSetTopicAttributesInput :: Encode SetTopicAttributesInput where e
 
 -- | Constructs SetTopicAttributesInput from required parameters
 newSetTopicAttributesInput :: AttributeName' -> TopicARN' -> SetTopicAttributesInput
-newSetTopicAttributesInput _AttributeName _TopicArn = SetTopicAttributesInput { "AttributeName": _AttributeName, "TopicArn": _TopicArn, "AttributeValue": (NullOrUndefined Nothing) }
+newSetTopicAttributesInput _AttributeName _TopicArn = SetTopicAttributesInput { "AttributeName": _AttributeName, "TopicArn": _TopicArn, "AttributeValue": Nothing }
 
 -- | Constructs SetTopicAttributesInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSetTopicAttributesInput' :: AttributeName' -> TopicARN' -> ( { "TopicArn" :: (TopicARN') , "AttributeName" :: (AttributeName') , "AttributeValue" :: NullOrUndefined (AttributeValue') } -> {"TopicArn" :: (TopicARN') , "AttributeName" :: (AttributeName') , "AttributeValue" :: NullOrUndefined (AttributeValue') } ) -> SetTopicAttributesInput
-newSetTopicAttributesInput' _AttributeName _TopicArn customize = (SetTopicAttributesInput <<< customize) { "AttributeName": _AttributeName, "TopicArn": _TopicArn, "AttributeValue": (NullOrUndefined Nothing) }
+newSetTopicAttributesInput' :: AttributeName' -> TopicARN' -> ( { "TopicArn" :: (TopicARN') , "AttributeName" :: (AttributeName') , "AttributeValue" :: Maybe (AttributeValue') } -> {"TopicArn" :: (TopicARN') , "AttributeName" :: (AttributeName') , "AttributeValue" :: Maybe (AttributeValue') } ) -> SetTopicAttributesInput
+newSetTopicAttributesInput' _AttributeName _TopicArn customize = (SetTopicAttributesInput <<< customize) { "AttributeName": _AttributeName, "TopicArn": _TopicArn, "AttributeValue": Nothing }
 
 
 
@@ -1319,7 +1318,7 @@ newSetTopicAttributesInput' _AttributeName _TopicArn customize = (SetTopicAttrib
 newtype SubscribeInput = SubscribeInput 
   { "TopicArn" :: (TopicARN')
   , "Protocol" :: (Protocol')
-  , "Endpoint" :: NullOrUndefined (Endpoint')
+  , "Endpoint" :: Maybe (Endpoint')
   }
 derive instance newtypeSubscribeInput :: Newtype SubscribeInput _
 derive instance repGenericSubscribeInput :: Generic SubscribeInput _
@@ -1329,18 +1328,18 @@ instance encodeSubscribeInput :: Encode SubscribeInput where encode = genericEnc
 
 -- | Constructs SubscribeInput from required parameters
 newSubscribeInput :: Protocol' -> TopicARN' -> SubscribeInput
-newSubscribeInput _Protocol _TopicArn = SubscribeInput { "Protocol": _Protocol, "TopicArn": _TopicArn, "Endpoint": (NullOrUndefined Nothing) }
+newSubscribeInput _Protocol _TopicArn = SubscribeInput { "Protocol": _Protocol, "TopicArn": _TopicArn, "Endpoint": Nothing }
 
 -- | Constructs SubscribeInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSubscribeInput' :: Protocol' -> TopicARN' -> ( { "TopicArn" :: (TopicARN') , "Protocol" :: (Protocol') , "Endpoint" :: NullOrUndefined (Endpoint') } -> {"TopicArn" :: (TopicARN') , "Protocol" :: (Protocol') , "Endpoint" :: NullOrUndefined (Endpoint') } ) -> SubscribeInput
-newSubscribeInput' _Protocol _TopicArn customize = (SubscribeInput <<< customize) { "Protocol": _Protocol, "TopicArn": _TopicArn, "Endpoint": (NullOrUndefined Nothing) }
+newSubscribeInput' :: Protocol' -> TopicARN' -> ( { "TopicArn" :: (TopicARN') , "Protocol" :: (Protocol') , "Endpoint" :: Maybe (Endpoint') } -> {"TopicArn" :: (TopicARN') , "Protocol" :: (Protocol') , "Endpoint" :: Maybe (Endpoint') } ) -> SubscribeInput
+newSubscribeInput' _Protocol _TopicArn customize = (SubscribeInput <<< customize) { "Protocol": _Protocol, "TopicArn": _TopicArn, "Endpoint": Nothing }
 
 
 
 -- | <p>Response for Subscribe action.</p>
 newtype SubscribeResponse = SubscribeResponse 
-  { "SubscriptionArn" :: NullOrUndefined (SubscriptionARN')
+  { "SubscriptionArn" :: Maybe (SubscriptionARN')
   }
 derive instance newtypeSubscribeResponse :: Newtype SubscribeResponse _
 derive instance repGenericSubscribeResponse :: Generic SubscribeResponse _
@@ -1350,22 +1349,22 @@ instance encodeSubscribeResponse :: Encode SubscribeResponse where encode = gene
 
 -- | Constructs SubscribeResponse from required parameters
 newSubscribeResponse :: SubscribeResponse
-newSubscribeResponse  = SubscribeResponse { "SubscriptionArn": (NullOrUndefined Nothing) }
+newSubscribeResponse  = SubscribeResponse { "SubscriptionArn": Nothing }
 
 -- | Constructs SubscribeResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSubscribeResponse' :: ( { "SubscriptionArn" :: NullOrUndefined (SubscriptionARN') } -> {"SubscriptionArn" :: NullOrUndefined (SubscriptionARN') } ) -> SubscribeResponse
-newSubscribeResponse'  customize = (SubscribeResponse <<< customize) { "SubscriptionArn": (NullOrUndefined Nothing) }
+newSubscribeResponse' :: ( { "SubscriptionArn" :: Maybe (SubscriptionARN') } -> {"SubscriptionArn" :: Maybe (SubscriptionARN') } ) -> SubscribeResponse
+newSubscribeResponse'  customize = (SubscribeResponse <<< customize) { "SubscriptionArn": Nothing }
 
 
 
 -- | <p>A wrapper type for the attributes of an Amazon SNS subscription.</p>
 newtype Subscription = Subscription 
-  { "SubscriptionArn" :: NullOrUndefined (SubscriptionARN')
-  , "Owner" :: NullOrUndefined (Account')
-  , "Protocol" :: NullOrUndefined (Protocol')
-  , "Endpoint" :: NullOrUndefined (Endpoint')
-  , "TopicArn" :: NullOrUndefined (TopicARN')
+  { "SubscriptionArn" :: Maybe (SubscriptionARN')
+  , "Owner" :: Maybe (Account')
+  , "Protocol" :: Maybe (Protocol')
+  , "Endpoint" :: Maybe (Endpoint')
+  , "TopicArn" :: Maybe (TopicARN')
   }
 derive instance newtypeSubscription :: Newtype Subscription _
 derive instance repGenericSubscription :: Generic Subscription _
@@ -1375,12 +1374,12 @@ instance encodeSubscription :: Encode Subscription where encode = genericEncode 
 
 -- | Constructs Subscription from required parameters
 newSubscription :: Subscription
-newSubscription  = Subscription { "Endpoint": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing), "Protocol": (NullOrUndefined Nothing), "SubscriptionArn": (NullOrUndefined Nothing), "TopicArn": (NullOrUndefined Nothing) }
+newSubscription  = Subscription { "Endpoint": Nothing, "Owner": Nothing, "Protocol": Nothing, "SubscriptionArn": Nothing, "TopicArn": Nothing }
 
 -- | Constructs Subscription's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSubscription' :: ( { "SubscriptionArn" :: NullOrUndefined (SubscriptionARN') , "Owner" :: NullOrUndefined (Account') , "Protocol" :: NullOrUndefined (Protocol') , "Endpoint" :: NullOrUndefined (Endpoint') , "TopicArn" :: NullOrUndefined (TopicARN') } -> {"SubscriptionArn" :: NullOrUndefined (SubscriptionARN') , "Owner" :: NullOrUndefined (Account') , "Protocol" :: NullOrUndefined (Protocol') , "Endpoint" :: NullOrUndefined (Endpoint') , "TopicArn" :: NullOrUndefined (TopicARN') } ) -> Subscription
-newSubscription'  customize = (Subscription <<< customize) { "Endpoint": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing), "Protocol": (NullOrUndefined Nothing), "SubscriptionArn": (NullOrUndefined Nothing), "TopicArn": (NullOrUndefined Nothing) }
+newSubscription' :: ( { "SubscriptionArn" :: Maybe (SubscriptionARN') , "Owner" :: Maybe (Account') , "Protocol" :: Maybe (Protocol') , "Endpoint" :: Maybe (Endpoint') , "TopicArn" :: Maybe (TopicARN') } -> {"SubscriptionArn" :: Maybe (SubscriptionARN') , "Owner" :: Maybe (Account') , "Protocol" :: Maybe (Protocol') , "Endpoint" :: Maybe (Endpoint') , "TopicArn" :: Maybe (TopicARN') } ) -> Subscription
+newSubscription'  customize = (Subscription <<< customize) { "Endpoint": Nothing, "Owner": Nothing, "Protocol": Nothing, "SubscriptionArn": Nothing, "TopicArn": Nothing }
 
 
 
@@ -1395,7 +1394,7 @@ instance encodeSubscriptionAttributesMap :: Encode SubscriptionAttributesMap whe
 
 -- | <p>Indicates that the customer already owns the maximum allowed number of subscriptions.</p>
 newtype SubscriptionLimitExceededException = SubscriptionLimitExceededException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeSubscriptionLimitExceededException :: Newtype SubscriptionLimitExceededException _
 derive instance repGenericSubscriptionLimitExceededException :: Generic SubscriptionLimitExceededException _
@@ -1405,12 +1404,12 @@ instance encodeSubscriptionLimitExceededException :: Encode SubscriptionLimitExc
 
 -- | Constructs SubscriptionLimitExceededException from required parameters
 newSubscriptionLimitExceededException :: SubscriptionLimitExceededException
-newSubscriptionLimitExceededException  = SubscriptionLimitExceededException { "message": (NullOrUndefined Nothing) }
+newSubscriptionLimitExceededException  = SubscriptionLimitExceededException { "message": Nothing }
 
 -- | Constructs SubscriptionLimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSubscriptionLimitExceededException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> SubscriptionLimitExceededException
-newSubscriptionLimitExceededException'  customize = (SubscriptionLimitExceededException <<< customize) { "message": (NullOrUndefined Nothing) }
+newSubscriptionLimitExceededException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> SubscriptionLimitExceededException
+newSubscriptionLimitExceededException'  customize = (SubscriptionLimitExceededException <<< customize) { "message": Nothing }
 
 
 
@@ -1425,7 +1424,7 @@ instance encodeSubscriptionsList :: Encode SubscriptionsList where encode = gene
 
 -- | <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your account.</p>
 newtype ThrottledException = ThrottledException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeThrottledException :: Newtype ThrottledException _
 derive instance repGenericThrottledException :: Generic ThrottledException _
@@ -1435,18 +1434,18 @@ instance encodeThrottledException :: Encode ThrottledException where encode = ge
 
 -- | Constructs ThrottledException from required parameters
 newThrottledException :: ThrottledException
-newThrottledException  = ThrottledException { "message": (NullOrUndefined Nothing) }
+newThrottledException  = ThrottledException { "message": Nothing }
 
 -- | Constructs ThrottledException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newThrottledException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> ThrottledException
-newThrottledException'  customize = (ThrottledException <<< customize) { "message": (NullOrUndefined Nothing) }
+newThrottledException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> ThrottledException
+newThrottledException'  customize = (ThrottledException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>A wrapper type for the topic's Amazon Resource Name (ARN). To retrieve a topic's attributes, use <code>GetTopicAttributes</code>.</p>
 newtype Topic = Topic 
-  { "TopicArn" :: NullOrUndefined (TopicARN')
+  { "TopicArn" :: Maybe (TopicARN')
   }
 derive instance newtypeTopic :: Newtype Topic _
 derive instance repGenericTopic :: Generic Topic _
@@ -1456,12 +1455,12 @@ instance encodeTopic :: Encode Topic where encode = genericEncode options
 
 -- | Constructs Topic from required parameters
 newTopic :: Topic
-newTopic  = Topic { "TopicArn": (NullOrUndefined Nothing) }
+newTopic  = Topic { "TopicArn": Nothing }
 
 -- | Constructs Topic's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTopic' :: ( { "TopicArn" :: NullOrUndefined (TopicARN') } -> {"TopicArn" :: NullOrUndefined (TopicARN') } ) -> Topic
-newTopic'  customize = (Topic <<< customize) { "TopicArn": (NullOrUndefined Nothing) }
+newTopic' :: ( { "TopicArn" :: Maybe (TopicARN') } -> {"TopicArn" :: Maybe (TopicARN') } ) -> Topic
+newTopic'  customize = (Topic <<< customize) { "TopicArn": Nothing }
 
 
 
@@ -1476,7 +1475,7 @@ instance encodeTopicAttributesMap :: Encode TopicAttributesMap where encode = ge
 
 -- | <p>Indicates that the customer already owns the maximum allowed number of topics.</p>
 newtype TopicLimitExceededException = TopicLimitExceededException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeTopicLimitExceededException :: Newtype TopicLimitExceededException _
 derive instance repGenericTopicLimitExceededException :: Generic TopicLimitExceededException _
@@ -1486,12 +1485,12 @@ instance encodeTopicLimitExceededException :: Encode TopicLimitExceededException
 
 -- | Constructs TopicLimitExceededException from required parameters
 newTopicLimitExceededException :: TopicLimitExceededException
-newTopicLimitExceededException  = TopicLimitExceededException { "message": (NullOrUndefined Nothing) }
+newTopicLimitExceededException  = TopicLimitExceededException { "message": Nothing }
 
 -- | Constructs TopicLimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTopicLimitExceededException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> TopicLimitExceededException
-newTopicLimitExceededException'  customize = (TopicLimitExceededException <<< customize) { "message": (NullOrUndefined Nothing) }
+newTopicLimitExceededException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> TopicLimitExceededException
+newTopicLimitExceededException'  customize = (TopicLimitExceededException <<< customize) { "message": Nothing }
 
 
 

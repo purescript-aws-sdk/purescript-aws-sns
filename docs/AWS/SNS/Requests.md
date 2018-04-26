@@ -3,7 +3,7 @@
 #### `addPermission`
 
 ``` purescript
-addPermission :: forall eff. Service -> AddPermissionInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+addPermission :: forall eff. Service -> AddPermissionInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Adds a statement to a topic's access control policy, granting access for the specified AWS accounts to the specified actions.</p>
@@ -51,7 +51,7 @@ createTopic :: forall eff. Service -> CreateTopicInput -> Aff (exception :: EXCE
 #### `deleteEndpoint`
 
 ``` purescript
-deleteEndpoint :: forall eff. Service -> DeleteEndpointInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteEndpoint :: forall eff. Service -> DeleteEndpointInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes the endpoint for a device and mobile app from Amazon SNS. This action is idempotent. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p> <p>When you delete an endpoint that is also subscribed to a topic, then you must also unsubscribe the endpoint from the topic.</p>
@@ -59,7 +59,7 @@ deleteEndpoint :: forall eff. Service -> DeleteEndpointInput -> Aff (exception :
 #### `deletePlatformApplication`
 
 ``` purescript
-deletePlatformApplication :: forall eff. Service -> DeletePlatformApplicationInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+deletePlatformApplication :: forall eff. Service -> DeletePlatformApplicationInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes a platform application object for one of the supported push notification services, such as APNS and GCM. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
@@ -67,7 +67,7 @@ deletePlatformApplication :: forall eff. Service -> DeletePlatformApplicationInp
 #### `deleteTopic`
 
 ``` purescript
-deleteTopic :: forall eff. Service -> DeleteTopicInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteTopic :: forall eff. Service -> DeleteTopicInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes a topic and all its subscriptions. Deleting a topic might prevent some messages previously sent to the topic from being delivered to subscribers. This action is idempotent, so deleting a topic that does not exist does not result in an error.</p>
@@ -179,7 +179,7 @@ publish :: forall eff. Service -> PublishInput -> Aff (exception :: EXCEPTION | 
 #### `removePermission`
 
 ``` purescript
-removePermission :: forall eff. Service -> RemovePermissionInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+removePermission :: forall eff. Service -> RemovePermissionInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Removes a statement from a topic's access control policy.</p>
@@ -187,7 +187,7 @@ removePermission :: forall eff. Service -> RemovePermissionInput -> Aff (excepti
 #### `setEndpointAttributes`
 
 ``` purescript
-setEndpointAttributes :: forall eff. Service -> SetEndpointAttributesInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+setEndpointAttributes :: forall eff. Service -> SetEndpointAttributesInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Sets the attributes for an endpoint for a device on one of the supported push notification services, such as GCM and APNS. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
@@ -195,7 +195,7 @@ setEndpointAttributes :: forall eff. Service -> SetEndpointAttributesInput -> Af
 #### `setPlatformApplicationAttributes`
 
 ``` purescript
-setPlatformApplicationAttributes :: forall eff. Service -> SetPlatformApplicationAttributesInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+setPlatformApplicationAttributes :: forall eff. Service -> SetPlatformApplicationAttributesInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Sets the attributes of the platform application object for the supported push notification services, such as APNS and GCM. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. For information on configuring attributes for message delivery status, see <a href="http://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon SNS Application Attributes for Message Delivery Status</a>. </p>
@@ -211,7 +211,7 @@ setSMSAttributes :: forall eff. Service -> SetSMSAttributesInput -> Aff (excepti
 #### `setSubscriptionAttributes`
 
 ``` purescript
-setSubscriptionAttributes :: forall eff. Service -> SetSubscriptionAttributesInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+setSubscriptionAttributes :: forall eff. Service -> SetSubscriptionAttributesInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Allows a subscription owner to set an attribute of the topic to a new value.</p>
@@ -219,7 +219,7 @@ setSubscriptionAttributes :: forall eff. Service -> SetSubscriptionAttributesInp
 #### `setTopicAttributes`
 
 ``` purescript
-setTopicAttributes :: forall eff. Service -> SetTopicAttributesInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+setTopicAttributes :: forall eff. Service -> SetTopicAttributesInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Allows a topic owner to set an attribute of the topic to a new value.</p>
@@ -235,7 +235,7 @@ subscribe :: forall eff. Service -> SubscribeInput -> Aff (exception :: EXCEPTIO
 #### `unsubscribe`
 
 ``` purescript
-unsubscribe :: forall eff. Service -> UnsubscribeInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+unsubscribe :: forall eff. Service -> UnsubscribeInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes a subscription. If the subscription requires authentication for deletion, only the owner of the subscription or the topic's owner can unsubscribe, and an AWS signature is required. If the <code>Unsubscribe</code> call does not require authentication and the requester is not the subscription owner, a final cancellation message is delivered to the endpoint, so that the endpoint owner can easily resubscribe to the topic if the <code>Unsubscribe</code> request was unintended.</p>
